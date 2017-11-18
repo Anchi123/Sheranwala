@@ -1,0 +1,353 @@
+﻿@using RealEstate.Models
+@model PropertyVM
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Property", Model, FormMethod.Post, new { encType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="content-area submit-property">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="submit-address">
+                        @*<form>*@
+                            <div class="main-title-2">
+                                <h1><span>Basic</span> Information</h1>
+                            </div>
+                            <div class="search-contents-sidebar">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.Label("City")<br />
+                                            @(Html.Kendo().ComboBoxFor(m => m.CityID)
+        .Name("CityID")
+        .DataTextField("City")
+        .DataValueField("CityID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("CityList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                            )
+                                          @Html.ValidationMessageFor(m => m.CityID)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.Label("Property Title")<br />
+                                            @Html.Kendo().TextBoxFor(m => m.PropertyTitle).HtmlAttributes(new { @class = "input-text", @placeholder = "Property Title", @style = "width:100%" })
+                                            @Html.ValidationMessageFor(m => m.PropertyTitle)
+                                        </div>
+                                    </div>
+                                </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("Purpose")<br />
+                                                    @(Html.Kendo().ComboBoxFor(m => m.Purpose).BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+          .SelectedIndex(0))
+                                                    @Html.ValidationMessageFor(m => m.Purpose)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("Type")<br />
+                                                    @(Html.Kendo().ComboBoxFor(m => m.TypeID)
+        .Name("TypeID")
+        .DataTextField("Type")
+        .DataValueField("TypeID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("TypeList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                                    )
+                                                    @Html.ValidationMessageFor(m => m.TypeID)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("Society")<br />
+                                                    @(Html.Kendo().ComboBoxFor(m => m.SocietyID)
+        .Name("SocietyID")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(false).CascadeFrom("CityID")
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyList", "Property").Data("CityFilter");
+            })
+            .ServerFiltering(true);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .Events(e => e.Change("chSociety"))
+        .SelectedIndex(0)
+                                                    )
+                                                    @Html.ValidationMessageFor(m => m.SocietyID)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" id="other" hidden="hidden">
+                                                <div class="form-group">
+                                                    @Html.Label("Other Society")<br />
+                                                    @Html.Kendo().TextBoxFor(m => m.OtherSociety).HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.OtherSociety)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    @Html.Label("Plot/House No")<br />
+                                                    @Html.Kendo().TextBoxFor(m => m.PlotNo).HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.PlotNo)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    @Html.Label("Block")<br />
+                                                    @Html.Kendo().TextBoxFor(m => m.Block).HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.Block)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    @Html.Label("Land Area")<br />
+                                                    @Html.Kendo().NumericTextBoxFor(m => m.LandArea).Decimals(0).Format("#").HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.LandArea)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    @Html.Label("Area Unit")<br />
+                                                    @(Html.Kendo().ComboBoxFor(m => m.UOMID)
+        .Name("UOMID")
+        .DataTextField("UOM")
+        .DataValueField("UOMID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("UOMList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                                    )
+                                                    @Html.ValidationMessageFor(m => m.UOMID)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    @Html.Label("Price")<br />
+                                                    @Html.Kendo().NumericTextBoxFor(m => m.Price).Name("Price").Max(999999999999999999).Decimals(0).Format("#").HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.Price)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+                                                    @Html.Label(" ", new { @Id = "Pric"})<br />
+                                                    @Html.Label(" ", new { @Id = "Pris" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.Label("Description")<br />
+                                                    @Html.TextAreaFor(m => m.Description, 5, 1, new { @class = "input-text", placeholder = "Description", @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.Description)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.Label("Property Images")<br />
+                                                    @Html.Kendo().Upload().Name("files"))
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="main-title-2">
+                                            <h1><span>Contact</span> Info</h1>
+                                        </div>
+                                        <div class="row">
+                                           
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("Name")<br />
+                                                    @Html.Kendo().TextBoxFor(m => m.Owner).HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.Owner)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("IsDealer")<br />
+                                                    @Html.Kendo().CheckBoxFor(m => m.IsDealer).Name("IsDealer").HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.IsDealer)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("Contact No")<br />
+                                                    @Html.Kendo().MaskedTextBoxFor(m => m.ContactNo).Mask("0000-0000000").HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.ContactNo)
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" id="est" hidden="hidden">
+                                                <div class="form-group">
+                                                    @Html.Label("Estate")<br />
+                                                    @Html.Kendo().AutoCompleteFor(m => m.Estate).HtmlAttributes(new { @style = "width:100%" })
+                                                    @Html.ValidationMessageFor(m => m.Estate)
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn button-md button-theme">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+@*</form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+}
+            <script>
+                $(document).ready(function () {
+                    $('#IsDealer').change(function () {
+                        if(this.checked)
+                        {
+                            $('#est').show();
+                        }
+                        else {
+                            $('#est').hide();
+                        }
+                    })
+                    $('#Price').bind('keyup',function () {
+                        var p = $(this).val();
+                        var pr = $(this).val();
+                        var pri = '';
+                        var pric = '';
+                        if (p >= 1000) {
+                            if (p >= 100000000000) {
+                                pri = Math.round(p / 100000000000) + ' Kharab ';
+                                p = p % 100000000000;
+                            }
+                            if (p >= 1000000000) {
+                                pri = pri + Math.round(p / 1000000000) + ' Arab ';
+                                p = p % 1000000000;
+                            }
+                            if (p >= 10000000) {
+                                pri = pri + Math.round(p / 10000000) + ' Crore ';
+                                p = p % 10000000;
+                            }
+                            if (p >= 100000) {
+                                pri = pri + Math.round(p / 100000) + ' Lakh ';
+                                p = p % 100000;
+                            }
+                            if (p >= 1000) {
+                                pri = pri + Math.round(p / 1000) + ' Thousand ';
+                                p = p % 1000;
+                            }
+                            /////////////////////////////////////////////////////////
+                            if (pr >= 1000000000000) {
+                                pric = Math.round(pr / 1000000000000) + ' Trillion ';
+                                pr = pr % 1000000000000;
+                            }
+                            if (pr >= 1000000000) {
+                                pric = pric + Math.round(pr / 1000000000) + ' Billion ';
+                                pr = pr % 1000000000;
+                            }
+                            if (pr >= 1000000) {
+                                pric = pric + Math.round(pr / 1000000) + ' Million ';
+                                pr = pr % 1000000;
+                            }
+                            if (pr >= 1000) {
+                                pric = pric + Math.round(pr / 1000) + ' Thousand ';
+                                pr = pr % 1000;
+                            }
+                        }
+                        $('#Pric').text(pri);
+                        $('#Pris').text(pric);
+                    })
+                });
+
+
+                
+                function chSociety() {
+                    var soc = $('#SocietyID').val();
+                    
+                    if(soc > 0)
+                    {
+                        $('#other').hide();
+                    }
+                    else if(soc == 0)
+                    {
+                        $('#other').show();
+                    }
+                    else
+                    {
+                        $('#OtherSociety').val(soc);
+                        $('#other').show();
+                        $('#SocietyID').data("kendoComboBox").value(0);
+                    }
+                }
+
+
+                function CityFilter() {
+                    return {
+                        CityID: $('#CityID').val()
+                    }
+                }
+                //function imgeve(e)
+                //{
+                //    alert(getFileInfo(e));
+                //}
+                //function getFileInfo(e) {
+                //    return $.map(e.files, function (file) {
+                //        var info = file.name;
+
+                //        // File size is not available in all browsers
+                //        if (file.size > 0) {
+                //            info += " (" + Math.ceil(file.size / 1024) + " KB)";
+                //        }
+                //        return info;
+                //    }).join(", ");
+                //}
+            </script>

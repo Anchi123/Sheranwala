@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Sheranwala RealEstate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap-submenu.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="~/assets/css/leaflet.css" type="text/css">
+    <link rel="stylesheet" href="~/assets/css/map.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/fonts/linearicons/style.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/dropzone.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="~/assets/css/skins/default.css">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="~/assets/img/favicon.png" type="image/png">
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/ie10-viewport-bug-workaround.css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script type="text/javascript" src="~/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   
+    <script type="text/javascript" src="~/assets/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery-2.2.0.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="~/assets/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/respond.min.js"></script>
+    <![endif]-->
+	<!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
+    
+	@*@Scripts.Render("~/bundles/jquery")*@
+    	<link href="@Url.Content("~/Content/kendo/2015.2.902/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2015.2.902/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/kendo/2015.2.902/kendo.metro.min.css")" rel="stylesheet" type="text/css" />
+	<script src="@Url.Content("~/Scripts/kendo/2015.2.902/jquery.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2015.2.902/jszip.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2015.2.902/kendo.all.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2015.2.902/kendo.aspnetmvc.min.js")"></script>
+	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <!-- /Option Panel -->
+    <!-- Top header start -->
+    <header class="top-header hidden-xs" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="list-inline">
+                        <a href="tel:1-8X0-666-8X88"><i class="fa fa-phone"></i>111-228-228</a>
+                        <a href="tel:sheranwalagroup@yahoo.com"><i class="fa fa-envelope"></i>sheranwalagroup@yahoo.com</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <ul class="top-social-media pull-right">
+                        <li>
+                            @Html.Action("LoginName","Login")
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Top header end -->
+    <!-- Main header start -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navigation" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/Home/Index" @*class="logo"*@>
+                        <img src="~/assets/img/logos/logo1.png" class="img-responsive" alt="logo">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="navbar-collapse collapse" role="navigation" aria-expanded="true" id="app-navigation">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="/Home/Index/" tabindex="0" >
+                                Home
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Home/About/" tabindex="1" >
+                                About
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Home/Agents" tabindex="2" >
+                                Agents
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" tabindex="3" >
+                                Properties
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Property/Properties/Sale">Sale</a></li>
+                                <li><a href="~/Property/Properties/Rent">Rent</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Home/Gallery" tabindex="4" >
+                                Gallery
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Home/Contact" tabindex="5" >
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" tabindex="6">
+                                Blog
+                            </a>
+                        </li>
+                       
+                    </ul>
+                    @Html.Action("_SubmitProperty","Home")
+                    @*<ul class="nav navbar-nav navbar-right rightside-navbar">
+                        <li>
+                            <a href="/Property/Create" class="button">
+                                Submit Property
+                            </a>
+                        </li>
+                    </ul>*@
+                </div>
+                <!-- /.navbar-collapse -->
+                <!-- /.container -->
+            </nav>
+        </div>
+    </header>
+    <!-- Main header end -->
+    <!-- Option Panel -->
+    @RenderBody()
+    <!-- Partners block end -->
+    <!-- Footer start -->
+    <footer class="main-footer clearfix">
+        <div class="container">
+            <!-- Footer top -->
+            @*<div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-5 col-md-4 col-sm-3 col-xs-12">
+                        <div class="logo-2">
+                            <a href="index.html">
+                                <img src="~/assets/img/logos/footer-logo.png" alt="footer-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4  col-md-4 col-sm-5 col-xs-12">
+                        <form action="index-4.html#" method="post">
+                            <input type="text" class="form-contact" name="email" placeholder="Enter your email">
+                            <button type="submit" name="submitNewsletter" class="btn btn-default button-small">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <ul class="social-list clearfix">
+                            <li><a href="index-4.html#"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="index-4.html#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="index-4.html#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="index-4.html#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="index-4.html#"><i class="fa fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>*@
+            <!-- Footer info-->
+            <div class="footer-info">
+                <br>
+          
+                <div class="row">
+                    <!-- About us -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer-item">
+                            <div class="main-title-2">
+                                <h1>Contact Us</h1>
+                            </div>
+                            <p>
+
+                            </p>
+                            <ul class="personal-info">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    F -19, PIA Society ,Chowk Wapda Town Round about ,Lahore Pakistan.
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    Email:<a href="#">sheranwalagroup@yahoo.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    Phone: <a href="#">+92-42-111-228-228</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                        <div class="footer-item">
+                            <div class="main-title-2">
+                                <h1>Social</h1>
+                            </div>
+                            <ul class="links">
+                                <li>
+                                    <a href="https://www.facebook.com/Sheranwala-Estate-Builders-1394127993996141/">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/SheranwalaEstat">Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCYXsDPm3TKDDEBj28yhoczw">Youtube</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/sheranwalaestate/">Instagram</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer-item">
+                            <div class="main-title-2">
+                                <h1>Like us</h1>
+                            </div>
+                            <div class="fb-page"
+                                 data-href="https://www.facebook.com/Sheranwala-Estate-Builders-1394127993996141/"
+                                 data-width="340"
+                                 data-hide-cover="false"
+                                 data-show-facepile="true">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+    </footer>
+    <!-- Footer end -->
+    <!-- Copy right start -->
+    <div class="copy-right">
+        <div class="container">
+            &copy;  2017 <a href="#" target="_blank">Sheranwala</a><h4>Powered By Ocean Business Softtech</h4>
+        </div>
+    </div>
+    <!-- Copy end right-->
+    <script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+    </script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-submenu.js"></script>
+    <script type="text/javascript" src="~/assets/js/rangeslider.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.mb.YTPlayer.js"></script>
+    <script type="text/javascript" src="~/assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.scrollUp.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/leaflet.js"></script>
+    <script type="text/javascript" src="~/assets/js/leaflet-providers.js"></script>
+    <script type="text/javascript" src="~/assets/js/leaflet.markercluster.js"></script>
+    <script type="text/javascript" src="~/assets/js/dropzone.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.filterizr.js"></script>
+    <script type="text/javascript" src="~/assets/js/maps.js"></script>
+    @*<script type="text/javascript" src="~/assets/js/app.js"></script>*@
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript" src="~/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Custom javascript -->
+    <script type="text/javascript" src="~/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    @*<script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+     ga('create', 'UA-100829780-3', 'auto');
+     ga('send', 'pageview');
+    </script>*@
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿@using RealEstate.Models
+<div class="recently-properties mrg-btm-70 chevron-icon">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1><span>Recently</span> Properties</h1>
+        </div>
+        <div class="row">
+            <div class="carousel our-partners slide" id="ourPartners2">
+                <div class="col-lg-12 mrg-btm-30">
+                    <a class="right carousel-control" href="index-4.html#ourPartners2" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
+                    <a class="right carousel-control" href="index-4.html#ourPartners2" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
+                </div>
+                <div class="carousel-inner" >
+                    @{
+                        var a = 0;
+                    }
+                    @foreach (var v in (List<PropertyListVM>)ViewBag.Recent)
+                    {
+                    <div class="item @(a == 0 ? "active" : "")">
+                        @{
+                            a++;
+                        }
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <!-- Property start -->
+                            <div class="property">
+                                <!-- Property img -->
+                                <a href="/Property/PropertyDetail/@v.PropertyID" class="property-img">
+                                    <div class="property-tag button sale">@v.Purpose</div>
+                                    <div class="property-price">Rs.@v.Price</div>
+                                    <img src="~/Images/@v.ImagePath" align="middle" alt="properties-3" @*class="img-responsive"*@ style="height:182px;overflow:hidden;" >
+                                </a>
+                                <!-- Property content -->
+                                <div class="property-content">
+                                    <!-- title -->
+                                    <h1 class="title">
+                                        <a href="/Property/PropertyDetail/@v.PropertyID">@v.PropertyTitle</a>
+                                    </h1>
+                                    <!-- Property address -->
+                                    <h3 class="property-address">
+                                        <a href="#">
+                                            <i class="fa fa-map-marker"></i>@v.PlotNo @(String.IsNullOrWhiteSpace(v.Block) ? "" : v.Block + " Block") @v.Society @v.City
+                                        </a>
+                                    </h3>
+                                    <h3 class="property-address">
+                                        <a href="#">
+                                            <i class="flaticon-people"></i>Agent @v.User
+                                        </a>
+                                    </h3>
+                                    <!-- Facilities List -->
+                                    <ul class="facilities-list clearfix">
+                                        <li>
+                                            <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                                            <span>@v.LandArea @v.UOM</span>
+                                        </li>
+                                        <li>
+                                            <i class="price"></i>
+                                            <span>Rs. @v.Price</span>
+                                        </li>
+                                    </ul>
+                                    <!-- Property footer -->
+                                    <div class="property-footer">
+                                        <span class="left"><i class="fa fa-calendar-o icon"></i> @Math.Round((DateTime.Now - v.TransDate).TotalDays) days ago</span>
+                                        @*<span class="right">
+                                            <a href="index-4.html#"><i class="fa fa-heart-o icon"></i></a>
+                                            <a href="index-4.html#"><i class="fa fa-share-alt"></i></a>
+                                        </span>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Property end -->
+                        </div>
+                    </div>
+                    }
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,307 @@
+﻿@using RealEstate.Models
+@model PropertyVM
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Property", Model, FormMethod.Post, new { encType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="content-area submit-property">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="submit-address">
+                        <form>
+                            <div class="main-title-2">
+                                <h1><span>Basic</span> Information</h1>
+                            </div>
+                            <div class="search-contents-sidebar">
+                                <div class="form-group">
+                                    @Html.Label("Property Title")
+                                    @Html.Kendo().TextBoxFor(m => m.PropertyTitle).HtmlAttributes(new { @class = "input-text", @placeholder = "Property Title", @style = "width:100%" })
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.Label("Purpose")
+                                            @(Html.Kendo().ComboBoxFor(m => m.Purpose).BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+          .SelectedIndex(0))
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.Label("Type")
+                                            @(Html.Kendo().ComboBoxFor(m => m.CityID)
+        .Name("TypeID")
+        .DataTextField("Type")
+        .DataValueField("TypeID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("TypeList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                            )
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            @Html.Label("Price")
+                                            @Html.Kendo().NumericTextBoxFor(m => m.Price).HtmlAttributes(new { @style = "width:100%" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <br>
+                                            @Html.Label("Featured")
+                                            @Html.Kendo().CheckBoxFor(m => m.IsFeatured)
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            @Html.Label("Land Area")
+                                            @Html.Kendo().NumericTextBoxFor(m => m.LandArea).HtmlAttributes(new { @style = "width:100%" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            @Html.Label("Area Unit")
+                                            @(Html.Kendo().ComboBoxFor(m => m.UOMID)
+        .Name("UOMID")
+        .DataTextField("UOM")
+        .DataValueField("UOMID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("UOMList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                            )
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="main-title-2">
+                                <h1><span>Property</span> Gallery</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.Kendo().Upload().Name("files")
+                                        </div>
+                                    </div>
+
+                                </div>
+                                      
+                                        @*<input name="file" type="file" multiple />*@
+                                        @*<div id="myDropZone" class="dropzone dropzone-design">
+                            <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                            <div class="fallback">
+
+                            </div>
+                        </div>*@
+                                        <div class="main-title-2">
+                                            <h1><span>Location</span></h1>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("City")
+                                                    @(Html.Kendo().ComboBoxFor(m => m.CityID)
+        .Name("CityID")
+        .DataTextField("City")
+        .DataValueField("CityID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("CityList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                                    )
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.Label("Society")
+                                                    @(Html.Kendo().ComboBoxFor(m => m.SocietyID)
+        .Name("SocietyID")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(false).CascadeFrom("CityID")
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyList", "Property").Data("CityFilter");
+            })
+            .ServerFiltering(true);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                                    )
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="main-title-2">
+                                            <h1><span>Detailed</span> Information</h1>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.Label("Description")
+                                                    @Html.TextAreaFor(m => m.Description, 5, 1, new { @class = "input-text", placeholder = "Detailed Information", @style = "width:100%" })
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn button-md button-theme">Submit</button>
+                                            </div>
+                                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+@*<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Property Title")
+            @Html.Kendo().TextBoxFor(m => m.PropertyTitle)
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Purpose")
+            @Html.Kendo().ComboBoxFor(m => m.Purpose).BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("City")
+            @(Html.Kendo().ComboBoxFor(m => m.CityID)
+        .Name("CityID")
+        .DataTextField("City")
+        .DataValueField("CityID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("CityList", "Property");
+            })
+            .ServerFiltering(false);
+        })
+            )
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Society")
+            @(Html.Kendo().ComboBoxFor(m => m.SocietyID)
+        .Name("SocietyID")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyList", "Property").Data("CityFilter");
+            })
+            .ServerFiltering(false);
+        })
+            )
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Price")
+            @Html.Kendo().NumericTextBoxFor(m => m.Price)
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Land Area")
+            @Html.Kendo().NumericTextBoxFor(m => m.LandArea)
+            @(Html.Kendo().ComboBoxFor(m => m.UOMID)
+        .Name("UOMID")
+        .DataTextField("UOM")
+        .DataValueField("UOMID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("UOMList", "Property");
+            })
+            .ServerFiltering(false);
+        })
+            )
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Description")
+            @Html.TextAreaFor(m => m.Description)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"> <button type="submit" class="btn-primary">Submit</button> </div>
+    </div>*@
+}
+            <script>
+                //$(document).ready(function () {
+                //    $("div#myDropZone").dropzone({ url: "/Property/UploadFile" });
+                //});
+                
+
+                function CityFilter() {
+                    return {
+                        CityID: $('#CityID').val()
+                    }
+                }
+            </script>

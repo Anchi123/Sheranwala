@@ -1,0 +1,64 @@
+﻿
+
+
+<div>
+
+    </div>﻿﻿
+<div class="col-md-12">
+
+
+    @(Html.Kendo().Grid<RealEstate.Models.PropertyVM>()
+      .Name("gridProperty")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.PropertyID).Width(70).Title("Sr No").Filterable(f => f.Enabled(false));
+          columns.Bound(c => c.TransDate).Format("{0:dd/MM/yyyy}").EditorTemplateName("Date").Title("Date").Width(100).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(100)));
+          columns.Bound(c => c.User).Width(90).Title("Agent").Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(90)));
+          columns.ForeignKey(c => c.Purpose, (System.Collections.IEnumerable)ViewData["PurposeVD"], "Value", "Text").Title("Purpose").Width(110).Filterable(f => f.Multi(true).Extra(false).Cell(c => c.ShowOperators(false).InputWidth(110)));
+          columns.ForeignKey(c => c.TypeID, (System.Collections.IEnumerable)ViewData["TypeVD"], "TypeID", "Type").Title("Type").Width(90).Filterable(f => f.Multi(true).Extra(false).Cell(c => c.ShowOperators(false).InputWidth(90)));
+          columns.ForeignKey(c => c.SocietyID, (System.Collections.IEnumerable)ViewData["SocietyVD"], "SocietyID", "Society").Title("Society").Width(100).Filterable(f => f.Multi(true).Extra(false).Cell(c => c.ShowOperators(false).InputWidth(100)));
+          columns.Bound(c => c.PlotNo).Width(100).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(100)));
+          columns.Bound(c => c.Block).Width(90).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(90)));
+          columns.Bound(c => c.Price).Width(90).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(90)));
+          columns.Bound(c => c.LandArea).Width(90).Title("Area").Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(90)));
+          columns.ForeignKey(c => c.UOMID, (System.Collections.IEnumerable)ViewData["UOMVD"], "UOMID", "UOM").Title("Unit").Width(80).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(80)));
+          columns.Bound(c => c.IsFeatured).ClientTemplate("# if (IsFeatured) { #Featured# }#").Width(120).Title("Featured").Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(120)));
+          columns.ForeignKey(c => c.Status, (System.Collections.IEnumerable)ViewData["StatusVD"], "Value", "Text").Title("Status").Width(120).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(120)));
+          columns.ForeignKey(c => c.CityID, (System.Collections.IEnumerable)ViewData["CityVD"], "CityID", "City").Title("City").Width(80).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(80)));
+          columns.Bound(c => c.PropertyTitle).Width(150).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(150)));
+          columns.Bound(c => c.Description).Width(150).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(150)));
+          columns.Bound(c => c.IsDealer).ClientTemplate("# if (IsDealer) { #Dealer# }#").Width(120).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(120)));
+          columns.Bound(c => c.Owner).Width(100).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(100)));
+          columns.Bound(c => c.ContactNo).Width(130).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(130)));
+          columns.Bound(c => c.Estate).Width(100).Filterable(f => f.Multi(true).Cell(c => c.ShowOperators(false).InputWidth(100)));
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Save();
+          toolbar.Excel();
+          toolbar.Pdf();
+      })
+      .Editable(editable => editable.Mode(GridEditMode.InCell))
+      .Pageable()
+      //.Selectable(selectable => {
+      //    selectable.Mode(GridSelectionMode.Multiple);
+      //    selectable.Type(GridSelectionType.Row);
+      //})
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .HtmlAttributes(new { style = "height: 500px;" })
+      .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Batch(true)
+          .Model(model => model.Id(p => p.PropertyID))
+          .Read(read => read.Action("tblProperties_Read", "Admin"))
+          .Update(update => update.Action("tblProperties_Update", "Admin"))
+          .Sort(sort => sort.Add("PropertyID").Descending())
+      )
+    )
+</div>
+

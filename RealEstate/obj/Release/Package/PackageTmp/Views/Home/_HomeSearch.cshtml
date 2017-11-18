@@ -1,0 +1,285 @@
+﻿@using RealEstate.Models
+
+<div class="search-area">
+    <div class="search-area-inner">
+        <div class="search-contents ">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    @Html.Label("Purpose")
+                    @(Html.Kendo().ComboBox().Name("Purpose").BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+          .SelectedIndex(0))
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    @Html.Label("Type")
+                    @(Html.Kendo().ComboBox()
+        .Name("TypeID")
+        .DataTextField("Type")
+        .DataValueField("TypeID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("TypeList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                    )
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    @Html.Label("Society")
+                    @(Html.Kendo().ComboBox()
+        .Name("SocietyID")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(false).CascadeFrom("CityID")
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyList", "Property").Data("CityFilter");
+            })
+            .ServerFiltering(true);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                    )
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    @Html.Label("Land Area")
+                    @Html.Kendo().NumericTextBox().Name("LandArea").HtmlAttributes(new { @style = "width:100%" })
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    @Html.Label("Area Unit")
+                    @(Html.Kendo().ComboBox()
+        .Name("UOMID")
+        .DataTextField("UOM")
+        .DataValueField("UOMID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("UOMList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                    )
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    @Html.Label("Price")
+                    @Html.Kendo().NumericTextBox().Name("Price").HtmlAttributes(new { @style = "width:100%" })
+                </div>
+            </div>
+            @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    <div class="range-slider">
+                        <div data-min="0" data-max="150000" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>*@
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                <div class="form-group">
+                    <button class="search-button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="search-area hidden-lg hidden-md">
+    <div class="container">
+        <div class="search-area-inner">
+            <div class="search-contents ">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            @Html.Label("Purpose")
+                            @(Html.Kendo().ComboBox().Name("Purpose").BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+          .SelectedIndex(0))
+                        </div>
+                        @*<div class="form-group">
+                            <select class="selectpicker search-fields" data-live-search="true" data-live-search-placeholder="Search value">
+                                <option>Area From</option>
+                                <option>1000</option>
+                                <option>800</option>
+                                <option>600</option>
+                                <option>400</option>
+                                <option>200</option>
+                                <option>100</option>
+                            </select>
+                        </div>*@
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            @Html.Label("Type")
+                            @(Html.Kendo().ComboBox()
+        .Name("TypeID")
+        .DataTextField("Type")
+        .DataValueField("TypeID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("TypeList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                            )
+                        </div>
+                        @*<div class="form-group">
+                            <select class="selectpicker search-fields" data-live-search="true" data-live-search-placeholder="Search value">
+                                <option>Property Status</option>
+                                <option>For Sale</option>
+                                <option>For Rent</option>
+                            </select>
+                        </div>*@
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            @Html.Label("Society")
+                            @(Html.Kendo().ComboBox()
+        .Name("SocietyID")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(false).CascadeFrom("CityID")
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyList", "Property").Data("CityFilter");
+            })
+            .ServerFiltering(true);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                            )
+                        </div>
+                        @*<div class="form-group">
+                            <select class="selectpicker search-fields" data-live-search="true" data-live-search-placeholder="Search value">
+                                <option>Location</option>
+                                <option>United States</option>
+                                <option>United Kingdom</option>
+                                <option>American Samoa</option>
+                                <option>Belgium</option>
+                                <option>Cameroon</option>
+                                <option>Canada</option>
+                            </select>
+                        </div>*@
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            @Html.Label("Land Area")
+                            @Html.Kendo().NumericTextBox().Name("LandArea").HtmlAttributes(new { @style = "width:100%" })
+                        </div>
+                        @*<div class="form-group">
+                            <select class="selectpicker search-fields" data-live-search="true" data-live-search-placeholder="Search value">
+                                <option>Property Types</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Land</option>
+                            </select>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            @Html.Label("Area Unit")
+                            @(Html.Kendo().ComboBox()
+        .Name("UOMID")
+        .DataTextField("UOM")
+        .DataValueField("UOMID")
+        .AutoBind(true)
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("UOMList", "Property");
+            })
+            .ServerFiltering(false);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                            )
+
+                        </div>
+                        @*<div class="form-group">
+                            <select class="selectpicker search-fields" data-live-search="true" data-live-search-placeholder="Search value">
+                                <option>Bedrooms</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                            </select>
+                        </div>*@
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.Label("Price")
+                                @Html.Kendo().NumericTextBox().Name("Price").HtmlAttributes(new { @style = "width:100%" })
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <select class="selectpicker search-fields" data-live-search="true" data-live-search-placeholder="Search value">
+                                <option>Bathrooms</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                            </select>
+                        </div>*@
+                    </div>
+                    @*<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <div class="range-slider">
+                                <div data-min="0" data-max="150000" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+                        <div class="form-group">
+                            <button class="search-button">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

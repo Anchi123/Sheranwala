@@ -1,0 +1,12 @@
+﻿@model string
+
+@if (Model != "")
+{
+    <i class="sign-in"> @Model</i>
+    <a href="/Login/ChangePassword" class="sign-in"><i class="fa fa-user"></i> Change Password</a>
+    <a href="/Login/Logout" class="sign-in"><i class="fa fa-sign-in"></i> Logout</a>
+}
+else
+{
+    <a href="/Login/Index" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+}

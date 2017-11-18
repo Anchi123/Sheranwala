@@ -1,0 +1,479 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- Banner start -->
+<div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/assets/img/banner/banner-slider.jpeg" alt="banner-slider-1">
+                <div class="carousel-caption banner-slider-inner banner-top-align text-left">
+                    @*<h1 class="hidden-lg hidden-md">Find the<br> perfect home</h1>
+                    <a href="index-4.html#" class="btn button-md button-theme hidden-lg hidden-md">Learn More</a>*@
+                    <div class="banner-search-box hidden-xs hidden-sm">
+                        <!-- Search area start -->
+                        <div class="search-area">
+                            <div class="search-area-inner">
+                                <div class="search-contents ">
+                                    @using (Html.BeginForm("Search1", "Property", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                @*@Html.Label("Purpose")*@
+                                                @(Html.Kendo().DropDownList().Name("Purpose1").BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+      .SelectedIndex(0))
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                @*@Html.Label("Type")*@
+                                                @(Html.Kendo().DropDownList()
+    .Name("TypeID1")
+    .DataTextField("Type")
+    .DataValueField("TypeID")
+    .AutoBind(true)
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("TypeLists", "Property");
+        })
+        .ServerFiltering(false);
+    }).HtmlAttributes(new { @style = "width:100%" })
+    .SelectedIndex(0)
+                                                )
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                @*@Html.Label("City")*@
+                                                @(Html.Kendo().DropDownList()
+    .Name("CityID1")
+    .DataTextField("City")
+    .DataValueField("CityID")
+    .AutoBind(true)
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("CityList", "Property");
+        })
+        .ServerFiltering(false);
+    }).HtmlAttributes(new { @style = "width:100%" })
+    .SelectedIndex(0)
+                                                )
+                                            </div>
+                                        </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-group">
+                                            @*@Html.Label("Society")*@
+                                            @(Html.Kendo().ComboBox()
+        .Name("SocietyID1")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(true).CascadeFrom("CityID1")
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyLists", "Property").Data("CityFilter1");
+            })
+            .ServerFiltering(true);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                            )
+                                        </div>
+                                    </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                @Html.Kendo().NumericTextBox().Name("FromArea1").Placeholder("From Area").HtmlAttributes(new { @style = "width:100%" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                @Html.Kendo().NumericTextBox().Name("ToArea1").Placeholder("To Area").HtmlAttributes(new { @style = "width:100%" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                @(Html.Kendo().DropDownList()
+    .Name("UOMID1")
+    .DataTextField("UOM")
+    .DataValueField("UOMID")
+    .AutoBind(true)
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("UOMList", "Property");
+        })
+        .ServerFiltering(false);
+    }).HtmlAttributes(new { @style = "width:100%" })
+    .SelectedIndex(0)
+                                                )
+                                            </div>
+                                        </div>
+                                            </div>
+                                            
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                @Html.Kendo().NumericTextBox().Name("FromPrice1").Placeholder("From Price").HtmlAttributes(new { @style = "width:100%" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                @Html.Kendo().NumericTextBox().Name("ToPrice1").Placeholder("To Price").HtmlAttributes(new { @style = "width:100%" })
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn button-md button-theme">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <!-- Search area start -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        @*<a class="left carousel-control" href="index-4.html#carousel-example-generic" role="button" data-slide="prev">
+            <span class="slider-mover-left" aria-hidden="true">
+                <i class="fa fa-angle-left"></i>
+            </span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="index-4.html#carousel-example-generic" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <i class="fa fa-angle-right"></i>
+            </span>
+            <span class="sr-only">Next</span>
+        </a>*@
+    </div>
+</div>
+<!-- Banner end -->
+<!-- Search area start -->
+<div class="search-area hidden-lg hidden-md">
+    <div class="container">
+        <div class="search-area-inner">
+            <div class="search-contents ">
+                @using (Html.BeginForm("Search2", "Property", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                @*@Html.Label("Purpose")*@
+                                @(Html.Kendo().DropDownList().Name("Purpose2").BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Sale", Value = "Sale"
+              },
+              new SelectListItem() {
+                Text = "Rent", Value = "Rent"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+      .SelectedIndex(0))
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                @*@Html.Label("Type")*@
+                                @(Html.Kendo().DropDownList()
+    .Name("TypeID2")
+    .DataTextField("Type")
+    .DataValueField("TypeID")
+    .AutoBind(true)
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("TypeLists", "Property");
+        })
+        .ServerFiltering(false);
+    }).HtmlAttributes(new { @style = "width:100%" })
+    .SelectedIndex(0)
+                                )
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                @*@Html.Label("City")*@
+                                                @(Html.Kendo().DropDownList()
+    .Name("CityID2")
+    .DataTextField("City")
+    .DataValueField("CityID")
+    .AutoBind(true)
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("CityList", "Property");
+        })
+        .ServerFiltering(false);
+    }).HtmlAttributes(new { @style = "width:100%" })
+    .SelectedIndex(0)
+                                                )
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                @*@Html.Label("Society")*@
+                                                @(Html.Kendo().ComboBox()
+        .Name("SocietyID2")
+        .DataTextField("Society")
+        .DataValueField("SocietyID")
+        .AutoBind(true).CascadeFrom("CityID2")
+        .DataSource(source =>
+        {
+            source.Read(read =>
+            {
+                read.Action("SocietyLists", "Property").Data("CityFilter2");
+            })
+            .ServerFiltering(true);
+        }).HtmlAttributes(new { @style = "width:100%" })
+        .SelectedIndex(0)
+                                                )
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                    @Html.Kendo().NumericTextBox().Name("FromArea2").Placeholder("From Area").HtmlAttributes(new { @style = "width:100%" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                    @Html.Kendo().NumericTextBox().Name("ToArea2").Placeholder("To Area").HtmlAttributes(new { @style = "width:100%" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                    @(Html.Kendo().DropDownList()
+    .Name("UOMID2")
+    .DataTextField("UOM")
+    .DataValueField("UOMID")
+    .AutoBind(true)
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+            read.Action("UOMList", "Property");
+        })
+        .ServerFiltering(false);
+    }).HtmlAttributes(new { @style = "width:100%" })
+    .SelectedIndex(0)
+                                                    )
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="form-group">
+                                                        @Html.Kendo().NumericTextBox().Name("FromPrice2").Placeholder("From Price").HtmlAttributes(new { @style = "width:100%" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="form-group">
+                                                        @Html.Kendo().NumericTextBox().Name("ToPrice2").Placeholder("To Price").HtmlAttributes(new { @style = "width:100%" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn button-md button-theme">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search area start -->
+<!-- Featured properties start -->
+@Html.Action("_HomeFeatured")
+<!-- Featured properties end -->
+<!-- What are you looking for? start -->
+
+<!-- What are you looking for? end -->
+<!-- Recently properties start -->
+@Html.Action("_HomeRecent")
+
+<!-- Partners block end -->
+<!-- Categories strat -->
+<div class="categories">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1><span>Popular</span> Societies</h1>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row wow">
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6 col-pad wow fadeInLeft delay-04s">
+                        <div class="category">
+                            <div class="category_bg_box cat-1-bg">
+                                <div class="category-overlay">
+                                    <span class="category-content">
+                                        <span class="category-title">Bahria Town</span>
+                                        <br>
+                                        <span class="category-subtitle">14 Properties</span>
+                                        <br>
+                                        <a href="index-4.html#" class="btn button-sm button-theme">View All</a>
+                                    </span><!-- /.category-content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-pad wow fadeInLeft delay-04s">
+                        <div class="category">
+                            <div class="category_bg_box cat-2-bg">
+                                <div class="category-overlay">
+                                    <span class="category-content">
+                                        <span class="category-title">DHA</span>
+                                        <br>
+                                        <span class="category-subtitle">14 Properties</span>
+                                        <br>
+                                        <a href="index-4.html#" class="btn button-sm button-theme ">View All</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-pad wow fadeInUp delay-04s">
+                        <div class="category">
+                            <div class="category_bg_box cat-3-bg">
+                                <div class="category-overlay">
+                                    <span class="category-content">
+                                        <span class="category-title">Lake City</span>
+                                        <br>
+                                        <span class="category-subtitle">27 Properties</span>
+                                        <br>
+                                        <a href="index-4.html#" class="btn button-sm button-theme ">View All</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-pad wow fadeInRight delay-04s">
+                <div class="category">
+                    <div class="category_bg_box category_long_bg cat-4-bg">
+                        <div class="category-overlay">
+                            <span class="category-content">
+                                <span class="category-title">Khayaban-e-Ameen</span>
+                                <br>
+                                <span class="category-subtitle">14 Properties</span>
+                                <br>
+                                <a href="index-4.html#" class="btn button-sm button-theme ">View All</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Categories end-->
+<!-- Pricing tables start -->
+
+<!-- Testimonial section end -->
+<div class="clearfix"></div>
+<!-- Intro section strat -->
+
+<!-- Intro section end -->
+<!-- Partners block start -->
+<div class="partners-block">
+    <div class="container">
+        <h2>Our Branches</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="carousel our-partners slide" id="ourPartners">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                
+                                <a href="/Home/Branches">
+                                    <h3>Wapda Town</h3>
+                                        @*<img src="~/assets/img/brand/audiojungle.png" alt="audiojungle">*@
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <a href="/Home/Branches">
+                                    <h3>DHA Rahber Phase 11</h3>
+                                </a>
+</div>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <a href="/Home/Branches">
+                                    <h3>Khayaban-e-Ameen</h3>
+                                </a>
+                                    @*<a href="#">
+                <img src="~/assets/img/brand/tuts.png" alt="tuts">
+            </a>*@
+</div>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <a href="/Home/Branches">
+                                    <h3>Engineers Town</h3>
+                                </a>
+                                    @*<a href="#">
+                <img src="~/assets/img/brand/graphicriver.png" alt="graphicriver">
+            </a>*@
+</div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#ourPartners" data-slide="prev"><i class="fa fa-chevron-left icon-prev"></i></a>
+                    <a class="right carousel-control" href="#ourPartners" data-slide="next"><i class="fa fa-chevron-right icon-next"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function CityFilter1() {
+        return {
+            CityID: $('#CityID1').val()
+        }
+    }
+    function CityFilter2() {
+        return {
+            CityID: $('#CityID2').val()
+        }
+    }
+</script>
+<script type="text/javascript" src="~/assets/js/app.js"></script>

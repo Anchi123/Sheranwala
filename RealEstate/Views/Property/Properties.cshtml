@@ -1,0 +1,337 @@
+﻿@using RealEstate.Models
+@model SearchPropertyVM
+
+@using (Html.BeginForm("SearchResult", "Property", FormMethod.Post, new { @Id = "frm" }))
+{
+    @Html.HiddenFor(m => m.PageNo, new { @Id = "PageNo" })
+    @Html.HiddenFor(m => m.City)
+    @Html.HiddenFor(m => m.FromArea)
+    @Html.HiddenFor(m => m.ToArea)
+    @Html.HiddenFor(m => m.FromPrice)
+    @Html.HiddenFor(m => m.ToPrice)
+    @Html.HiddenFor(m => m.OrderID, new { @Id = "OrderID" })
+    @Html.HiddenFor(m => m.Purpose)
+    @Html.HiddenFor(m => m.Society)
+    @Html.HiddenFor(m => m.TotalPage)
+    @Html.HiddenFor(m => m.Type)
+    @Html.HiddenFor(m => m.UOM)
+}
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="overlay">
+        <div class="container">
+            <div class="breadcrumb-area">
+                <h1>Search Properties</h1>
+                <ul class="breadcrumbs">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Search Properties</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+<!-- Properties section body start -->
+<div class="properties-section-body content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-xs-12">
+
+
+                <!-- Option bar start -->
+                <div class="option-bar">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-5 col-sm-5 col-xs-2">
+                            <h4>
+                                <span class="heading-icon">
+                                    <i class="fa fa-th-list"></i>
+                                </span>
+                                <span class="hidden-xs">Properties List</span>
+                            </h4>
+                        </div>
+                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-10 cod-pad">
+                            @(Html.Kendo().ComboBox().Name("Order").BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "New To Old", Value = "1"
+              },
+              new SelectListItem() {
+                Text = "Old To New", Value = "2"
+              },
+              new SelectListItem() {
+                Text = "Price (High To Low)", Value = "3"
+              },
+              new SelectListItem() {
+                Text = "Price (Low To High)", Value = "4"
+              }
+          }).HtmlAttributes(new { @style = "width:100%" })
+.Events(e => e.Change("searcOrder")).Value(Model.OrderID.ToString())
+.SelectedIndex(0))
+                            @*<div class="sorting-options" id="sear" onchange="searc()">
+                                    <select class="sorting">
+                                        <option value="1">@Html.ActionLink(" New To Old","SearchResult",new { mod = ViewBag.Para,OrderID = 1})</option>
+                                        <option value="2">Old To New</option>
+                                        <option value="3">Properties (High To Low)</option>
+                                        <option value="4">Properties (Low To High)</option>
+                                    </select>
+                                    <a href="properties-list-rightside.html" class="change-view-btn active-view-btn"><i class="fa fa-th-list"></i></a>
+                                    <a href="properties-grid-rightside.html" class="change-view-btn"><i class="fa fa-th-large"></i></a>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+                <!-- Option bar end -->
+                <div class="clearfix"></div>
+                <!-- Property start -->
+                @foreach (var v in (List<PropertyListVM>)ViewBag.PropertyList)
+                {
+                    <div class="property clearfix wow fadeInUp delay-03s">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-pad">
+                            <a href="/Property/PropertyDetail/@v.PropertyID" class="property-img height">
+                                @if (v.IsFeatured)
+                                {
+                                    <div class="property-tag button alt featured">Featured</div>
+                                }
+                                <div class="property-tag button sale">@v.Purpose</div>
+                                <div class="property-price">Rs. @v.Price</div>
+                                <img src="~/assets/img/properties/properties-1.jpg" alt="properties-1" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 property-content ">
+                            <!-- title -->
+                            <h1 class="title">
+                                <a href="/Property/PropertyDetail/@v.PropertyID">@v.PropertyTitle</a>
+                            </h1>
+                            <!-- Property address -->
+                            <h3 class="property-address">
+                                <a href="#">
+                                    <i class="fa fa-map-marker"></i>@v.Society @v.City
+                                </a>
+                            </h3>
+                            <!-- Facilities List -->
+                            <ul class="facilities-list clearfix">
+                                <li>
+                                    <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                                    <span>@v.LandArea @v.UOM</span>
+                                </li>
+
+                            </ul>
+                            <!-- Property footer -->
+                            <div class="property-footer">
+                                <span class="left"><i class="fa fa-calendar-o icon"></i> @Math.Round((DateTime.Now - v.TransDate).TotalDays) days ago</span>
+                                <span class="right">
+                                        <a href="/Property/Edit/@v.PropertyID">Edit</a>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Property end -->
+                <!-- Page navigation start -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        @if (Model.PageNo > 1)
+                        {
+                            <li>
+                                <a href="properties-list-rightside.html#" aria-label="Previous">
+                                    <span aria-hidden="true">Previous</span>
+                                </a>
+                            </li>
+                        }
+                        @for (int i = 1; i <= Model.TotalPage; i++)
+                        {
+                            if (i == Model.PageNo)
+                            {
+                                <li class="active"><a href="#" onclick="searcPage(@i)">@i<span class="sr-only">(current)</span></a></li>
+                            }
+                            else
+                            {
+                                <li><a href="#" onclick="searcPage(@i)">@i</a></li>
+                            }
+                        }
+
+
+                        @*<li><a href="properties-list-rightside.html#">3</a></li>
+                            <li><a href="properties-list-rightside.html#">4</a></li>
+                            <li><a href="properties-list-rightside.html#">5</a></li>*@
+                        @if (Model.PageNo != Model.TotalPage)
+                        {
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">Next</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+                <!-- Page navigation end-->
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <!-- Search contents sidebar start -->
+                <div class="sidebar-widget">
+                    <div class="main-title-2">
+                        <h1><span>Advanced</span> Search</h1>
+
+                    </div>
+                    @Html.Partial("_AdvanceSearch")
+                    @*@using (Html.BeginForm("Search", "Property", FormMethod.Post))
+                    {
+                        <div class="form-group">
+
+                            @(Html.Kendo().DropDownList().Name("Purpose1").BindTo(new List<SelectListItem>() {
+                              new SelectListItem() {
+                                Text = "Sale", Value = "Sale"
+                              },
+                              new SelectListItem() {
+                                Text = "Rent", Value = "Rent"
+                              }
+                          }).HtmlAttributes(new { @style = "width:100%" })
+                            .SelectedIndex(0))
+                        </div>
+                        <div class="form-group">
+
+                            @(Html.Kendo().DropDownList()
+                            .Name("TypeID")
+                            .DataTextField("Type")
+                            .DataValueField("TypeID")
+                            .AutoBind(true)
+                            .DataSource(source =>
+                            {
+                                source.Read(read =>
+                                {
+                                    read.Action("TypeLists", "Property");
+                                })
+                                .ServerFiltering(false);
+                            }).HtmlAttributes(new { @style = "width:100%" })
+                            .SelectedIndex(0)
+                            )
+                        </div>
+                        <div class="form-group">
+
+                            @(Html.Kendo().DropDownList()
+                            .Name("CityID")
+                            .DataTextField("City")
+                            .DataValueField("CityID")
+                            .AutoBind(true)
+                            .DataSource(source =>
+                            {
+                                source.Read(read =>
+                                {
+                                    read.Action("CityList", "Property");
+                                })
+                                .ServerFiltering(false);
+                            }).HtmlAttributes(new { @style = "width:100%" })
+                            .SelectedIndex(0)
+                            )
+                        </div>
+                        <div class="form-group">
+
+                            @(Html.Kendo().ComboBox()
+                                .Name("SocietyID")
+                                .DataTextField("Society")
+                                .DataValueField("SocietyID")
+                                .AutoBind(true).CascadeFrom("CityID")
+                                .DataSource(source =>
+                                {
+                                    source.Read(read =>
+                                    {
+                                        read.Action("SocietyLists", "Property").Data("CityFilter");
+                                    })
+                                    .ServerFiltering(true);
+                                }).HtmlAttributes(new { @style = "width:100%" })
+                                .SelectedIndex(0)
+                            )
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="form-group">
+                                    @Html.Kendo().NumericTextBox().Name("FromArea1").Placeholder("From Area").HtmlAttributes(new { @style = "width:100%" })
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="form-group">
+                                    @Html.Kendo().NumericTextBox().Name("ToArea1").Placeholder("To Area").HtmlAttributes(new { @style = "width:100%" })
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="form-group">
+                                    @(Html.Kendo().DropDownList()
+                                    .Name("UOMID")
+                                    .DataTextField("UOM")
+                                    .DataValueField("UOMID")
+                                    .AutoBind(true)
+                                    .DataSource(source =>
+                                    {
+                                        source.Read(read =>
+                                        {
+                                            read.Action("UOMList", "Property");
+                                        })
+                                        .ServerFiltering(false);
+                                    }).HtmlAttributes(new { @style = "width:100%" })
+                                    .SelectedIndex(0)
+                                    )
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    @Html.Kendo().NumericTextBox().Name("FromPrice1").Placeholder("From Price").HtmlAttributes(new { @style = "width:100%" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    @Html.Kendo().NumericTextBox().Name("ToPrice1").Placeholder("To Price").HtmlAttributes(new { @style = "width:100%" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <button class="search-button">Search</button>
+                        </div>
+                    }*@
+
+                </div>
+                <!-- Search contents sidebar end -->
+                <!-- Helping box Start -->
+                <div class="sidebar-widget helping-box clearfix">
+                    <div class="main-title-2">
+                        <h1><span>Helping</span> Center</h1>
+
+                    </div>
+                    <div class="helping-center">
+                        <div class="icon"><i class="fa fa-map-marker"></i></div>
+                        <h4>Address</h4>
+                        <span>F -19, PIA Society ,Chowk Wapda Town Round about ,Lahore Pakistan</span>
+                    </div>
+                    <div class="helping-center">
+                        <div class="icon"><i class="fa fa-phone"></i></div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+92-42-111-228-228">+92-42-111-228-228</a> </p>
+                    </div>
+                </div>
+                <!-- Helping box end -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Properties section body end -->
+
+<script type="text/javascript" src="~/assets/js/app.js"></script>
+
+
+
+<script>
+    function searcPage(a) {
+        $('#PageNo').val(a);
+        $('#frm').submit();
+    }
+    function searcOrder(e) {
+        var a = $('#Order').val();
+        $('#OrderID').val(a);
+        $('#frm').submit();
+    }
+
+</script>

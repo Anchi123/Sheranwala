@@ -1,0 +1,48 @@
+﻿@model IEnumerable<RealEstate.Models.GalleryVM>
+@{
+    ViewBag.Title = "Gallery";
+}
+
+<!-- Banner start -->
+<div class="blog-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Gallery</h1>
+            <ul class="breadcrumbs">
+                <li><a href="#">Home</a></li>
+                <li class="active">Gallery</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Banner end -->
+<!-- Blog body start -->
+<div class="blog-body blog-creative content-area">
+    <div class="container">
+        <div class="row">
+            @foreach (var v in Model)
+            {
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <!-- Blog box start -->
+                <div class="thumbnail blog-box clearfix">
+                    <img src="~/Images/@("gal"+v.RowID+v.ImagePath)" alt="blog-05" class="img-responsive">
+                    <!-- detail -->
+                    <div class="caption detail">
+                        <!-- Main title -->
+                        <div class="main-title-2">
+                            <h1><a href="#">@v.Title</a></h1>
+                        </div>
+                 
+                        <p>@v.Description</p>
+                        <div class="clearfix"></div>
+                       </div>
+                </div>
+             
+                <!-- Blog box end -->
+            </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Blog body end -->
+

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<RealEstate.Models.GalleryVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Galleries</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="~/Images/@("gal"+item.RowID+item.ImagePath)" class="img-responsive" style="max-width:500px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RowID })
+        </td>
+    </tr>
+}
+
+</table>

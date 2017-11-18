@@ -1,0 +1,123 @@
+﻿@using (Html.BeginForm("Search1", "Property", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @(Html.Kendo().DropDownList().Name("Purpose1").BindTo(new List<SelectListItem>() {
+                              new SelectListItem() {
+                                Text = "Sale", Value = "Sale"
+                              },
+                              new SelectListItem() {
+                                Text = "Rent", Value = "Rent"
+                              }
+                          }).HtmlAttributes(new { @style = "width:100%" })
+                            .SelectedIndex(0))
+    </div>
+                            <div class="form-group">
+
+                                @(Html.Kendo().DropDownList()
+                            .Name("TypeID1")
+                            .DataTextField("Type")
+                            .DataValueField("TypeID")
+                            .AutoBind(true)
+                            .DataSource(source =>
+                            {
+                                source.Read(read =>
+                                {
+                                    read.Action("TypeLists", "Property");
+                                })
+                                .ServerFiltering(false);
+                            }).HtmlAttributes(new { @style = "width:100%" })
+                            .SelectedIndex(0)
+                                )
+                            </div>
+                            <div class="form-group">
+
+                                @(Html.Kendo().DropDownList()
+                            .Name("CityID1")
+                            .DataTextField("City")
+                            .DataValueField("CityID")
+                            .AutoBind(true)
+                            .DataSource(source =>
+                            {
+                                source.Read(read =>
+                                {
+                                    read.Action("CityList", "Property");
+                                })
+                                .ServerFiltering(false);
+                            }).HtmlAttributes(new { @style = "width:100%" })
+                            .SelectedIndex(0)
+                                )
+                            </div>
+                            <div class="form-group">
+
+                                @(Html.Kendo().ComboBox()
+                                .Name("SocietyID1")
+                                .DataTextField("Society")
+                                .DataValueField("SocietyID")
+                                .AutoBind(true).CascadeFrom("CityID1")
+                                .DataSource(source =>
+                                {
+                                    source.Read(read =>
+                                    {
+                                        read.Action("SocietyLists", "Property").Data("CityFilter1");
+                                    })
+                                    .ServerFiltering(true);
+                                }).HtmlAttributes(new { @style = "width:100%" })
+                                .SelectedIndex(0)
+                                )
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        @Html.Kendo().NumericTextBox().Name("FromArea1").Placeholder("From Area").HtmlAttributes(new { @style = "width:100%" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        @Html.Kendo().NumericTextBox().Name("ToArea1").Placeholder("To Area").HtmlAttributes(new { @style = "width:100%" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        @(Html.Kendo().DropDownList()
+                                    .Name("UOMID1")
+                                    .DataTextField("UOM")
+                                    .DataValueField("UOMID")
+                                    .AutoBind(true)
+                                    .DataSource(source =>
+                                    {
+                                        source.Read(read =>
+                                        {
+                                            read.Action("UOMList", "Property");
+                                        })
+                                        .ServerFiltering(false);
+                                    }).HtmlAttributes(new { @style = "width:100%" })
+                                    .SelectedIndex(0)
+                                        )
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        @Html.Kendo().NumericTextBox().Name("FromPrice1").Placeholder("From Price").HtmlAttributes(new { @style = "width:100%" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        @Html.Kendo().NumericTextBox().Name("ToPrice1").Placeholder("To Price").HtmlAttributes(new { @style = "width:100%" })
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <button class="search-button">Search</button>
+                            </div>
+}
+<script>
+    function CityFilter1() {
+        return {
+            CityID: $('#CityID1').val()
+        }
+    }
+</script>

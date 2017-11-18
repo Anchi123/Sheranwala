@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71dedf9e558448d4b8c40c546c920ab8" Name="Diagram1">
+        <EntityTypeShape EntityType="RealEstateModel.tblAgent" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblBranch" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblCity" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblImage" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblSociety" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblType" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblUOM" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.tblUser" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="RealEstateModel.FK_tblAgent_tblUser" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_tblSociety_tblCity" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_tblAgent_tblBranch" />
+        <EntityTypeShape EntityType="RealEstateModel.tblProperty" Width="1.5" PointX="5.25" PointY="5.125" />
+        <AssociationConnector Association="RealEstateModel.FK_tblProperty_tblCity" />
+        <AssociationConnector Association="RealEstateModel.FK_tblImage_tblProperty" />
+        <AssociationConnector Association="RealEstateModel.FK_tblProperty_tblSociety" />
+        <AssociationConnector Association="RealEstateModel.FK_tblProperty_tblType" />
+        <AssociationConnector Association="RealEstateModel.FK_tblProperty_tblUOM" />
+        <AssociationConnector Association="RealEstateModel.FK_tblProperty_tblUser" />
+        <EntityTypeShape EntityType="RealEstateModel.tblGallery" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RealEstateModel.tblContact" Width="1.5" PointX="10.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

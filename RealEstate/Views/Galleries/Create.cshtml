@@ -1,0 +1,45 @@
+﻿@model RealEstate.Models.GalleryVM
+
+
+@using (Html.BeginForm("Create", "Galleries", Model, FormMethod.Post, new { encType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Gallery</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.Kendo().TextBoxFor(m => m.Title).HtmlAttributes(new { @class = "input-text", @placeholder = "Enter Title", @style = "width:100%" })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Description,new { @style = "width:100%;"})
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("ImagePath", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.Kendo().Upload().Name("files")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
