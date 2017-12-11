@@ -48,286 +48,186 @@
         </div>
         <!-- option bar end -->
         <div class="clearfix"></div>
-
+       
         <div class="row">
-            <div class="col-lg-12">
-                @foreach(var v in (List<AgentVM>)ViewBag.Agents)
-                { 
-                <!-- Agent box big start -->
-                <div class="agent-box-big clearfix">
-                    <div class="col-lg-4 col-md-4 col-sm-5 agent-box-theme">
-                        <img src="~/Images/@(v.Img ?? "team-1.png")" alt="team-1.png" class="img-responsive">
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-7 agent-content detail">
-                        <!-- Title -->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- Agent box end -->
+                <div class="agent-box">
+                    <!-- Agent img -->
+                    <a href="agent-detail.html" class="agent-img">
+                        <img src="~/assets/img/team/team-1.jpg" alt="team-1" class="img-responsive">
+                    </a>
+                    <!-- Agent content -->
+                    <div class="agent-content">
+                        <!-- title -->
                         <h1 class="title">
-                            <a href="agent-single.html">@v.AgentName</a>
+                            <a href="agent-detail.html">Mujtaba Shafi</a>
                         </h1>
-                        <!-- contact -->
+                        <!-- Contact -->
                         <div class="contact">
-                            <p class="pgo2">
-                                <a href="mailto:@v.Email"><i class="fa fa-envelope-o"></i>@v.Email</a><a href="tel:@v.ContactNo"><i class="fa fa-phone"></i>@v.ContactNo</a>@*<a href="#"><i class="fa fa-skype"></i>sales.carworld</a>*@
+                            <p>
+                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>mujtaba.shafi181@gmail.com</a>
+                            </p>
+                            <p>
+                                <a href="tel:+923214898145"><i class="fa fa-phone"></i>+92 321-4898145</a>
                             </p>
                         </div>
-                        <p>@v.Description</p>
-                        <!-- footer -->
-                        <div class="footer clearfix">
-                            <div class="pull-left">
-                                <!-- social list -->
-                                <ul class="social-list clearfix">
-                                    <li>
-                                        <a href="#" class="facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="google">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="rss">
-                                            <i class="fa fa-rss"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            @*<div class="pull-right">
-                                <a href="#" class="btn button-sm button-theme">Details</a>
-                            </div>*@
-                        </div>
+                        <!-- Social list -->
                     </div>
                 </div>
-                }
-                @*<div class="agent-box-big clearfix">
-                    <div class="col-lg-4 col-md-4 col-sm-5 agent-box-theme">
-                        <img src="img/team/team-3.jpg" alt="team-3" class="img-responsive">
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-7 agent-content detail">
-                        <!-- Title -->
+                <!-- Agent box end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- Agent box end -->
+                <div class="agent-box">
+                    <!-- Agent img -->
+                    <a href="agent-detail.html" class="agent-img">
+                        <img src="~/assets/img/team/team-1.jpg" alt="team-2" class="img-responsive">
+                    </a>
+                    <!-- Agent content -->
+                    <div class="agent-content">
+                        <!-- title -->
                         <h1 class="title">
-                            <a href="agent-single.html">David Jackson</a>
+                            <a href="agent-detail.html">Arshad Ali</a>
                         </h1>
-                        <!-- contact -->
+                        <!-- Contact -->
                         <div class="contact">
-                            <p class="pgo2">
-                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>info@themevessel.com</a><a href="tel:+554XX-634-7071"><i class="fa fa-phone"></i>+55 4XX-634-7071</a><a href="#"><i class="fa fa-skype"></i>sales.carworld</a>
+                            <p>
+                                <a href="#"><i class="fa fa-envelope-o"></i>arshad_ch138@yahoo.com</a>
                             </p>
+                            <p>
+                                <a href="tel:+923214987676"><i class="fa fa-phone"></i>+92 321-4987676</a>
+                            </p>
+
                         </div>
-                        <p>Morbi accumsan ipsum velit nam nec tellus a odio tincidunt auctor a ornare odio sed non mauris<span class="hidden-sm">  vitae erat consequat auctor eu in elit class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos him enaeos mauris in erat</span> </p>
-                        <!-- footer -->
-                        <div class="footer clearfix">
-                            <div class="pull-left">
-                                <!-- social list -->
-                                <ul class="social-list clearfix">
-                                    <li>
-                                        <a href="#" class="facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="google">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="rss">
-                                            <i class="fa fa-rss"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pull-right">
-                                <a href="#" class="btn button-sm button-theme">Details</a>
-                            </div>
-                        </div>
+                        <!-- Sociallist -->
                     </div>
                 </div>
-                <div class="agent-box-big clearfix">
-                    <div class="col-lg-4 col-md-4 col-sm-5 agent-box-theme">
-                        <img src="img/team/team-4.jpg" alt="team-4" class="img-responsive">
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-7 agent-content detail">
-                        <!-- Title -->
+                <!-- Agent box end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- Agent box end -->
+                <div class="agent-box">
+                    <!-- Agent img -->
+                    <a href="agent-detail.html" class="agent-img">
+                        <img src="~/assets/img/team/team-1.jpg" alt="team-3" class="img-responsive">
+                    </a>
+                    <!-- Agent content -->
+                    <div class="agent-content">
+                        <!-- title -->
                         <h1 class="title">
-                            <a href="agent-single.html">Eliane Pereira</a>
+                            <a href="agent-detail.html">Muhammad Saqib Akram</a>
                         </h1>
-                        <!-- contact -->
+                        <!-- Contact -->
                         <div class="contact">
-                            <p class="pgo2">
-                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>info@themevessel.com</a><a href="tel:+554XX-634-7071"><i class="fa fa-phone"></i>+55 4XX-634-7071</a><a href="#"><i class="fa fa-skype"></i>sales.carworld</a>
+                            <p>
+                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>saqibakram789@hotmail.com</a>
                             </p>
+                            <p>
+                                <a href="tel:+9203214395766"><i class="fa fa-phone"></i>+92 0321-4395766</a>
+                            </p>
+
                         </div>
-                        <p>Morbi accumsan ipsum velit nam nec tellus a odio tincidunt auctor a ornare odio sed non mauris<span class="hidden-sm">  vitae erat consequat auctor eu in elit class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos him enaeos mauris in erat</span> </p>
-                        <!-- footer -->
-                        <div class="footer clearfix">
-                            <div class="pull-left">
-                                <!-- social list -->
-                                <ul class="social-list clearfix">
-                                    <li>
-                                        <a href="#" class="facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="google">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="rss">
-                                            <i class="fa fa-rss"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pull-right">
-                                <a href="#" class="btn button-sm button-theme">Details</a>
-                            </div>
-                        </div>
+                        <!-- Sociallist -->
                     </div>
                 </div>
-                <div class="agent-box-big clearfix">
-                    <div class="col-lg-4 col-md-4 col-sm-5 agent-box-theme">
-                        <img src="img/team/team-1.jpg" alt="team-1" class="img-responsive">
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-7 agent-content detail">
-                        <!-- Title -->
+                <!-- Agent box end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- Agent box end -->
+                <div class="agent-box">
+                    <!-- Agent img -->
+                    <a href="agent-detail.html" class="agent-img">
+                        <img src="~/assets/img/team/team-1.jpg" alt="team-4" class="img-responsive">
+                    </a>
+                    <!-- Agent content -->
+                    <div class="agent-content">
+                        <!-- title -->
                         <h1 class="title">
-                            <a href="agent-single.html">John Antony</a>
+                            <a href="agent-detail.html">Sheikh Muhammad Ikram</a>
                         </h1>
-                        <!-- contact -->
+                        <!-- Contact -->
                         <div class="contact">
-                            <p class="pgo2">
-                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>info@themevessel.com</a><a href="tel:+554XX-634-7071"><i class="fa fa-phone"></i>+55 4XX-634-7071</a><a href="#"><i class="fa fa-skype"></i>sales.carworld</a>
+                            <p>
+                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>sheikhikram922@gmail.com</a>
                             </p>
+                            <p>
+                                <a href="tel:+923214733338"><i class="fa fa-phone"></i>+92 321-4733338</a>
+                            </p>
+
                         </div>
-                        <p>Morbi accumsan ipsum velit nam nec tellus a odio tincidunt auctor a ornare odio sed non mauris<span class="hidden-sm">  vitae erat consequat auctor eu in elit class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos him enaeos mauris in erat</span> </p>
-                        <!-- footer -->
-                        <div class="footer clearfix">
-                            <div class="pull-left">
-                                <!-- social list -->
-                                <ul class="social-list clearfix">
-                                    <li>
-                                        <a href="#" class="facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="google">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="rss">
-                                            <i class="fa fa-rss"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pull-right">
-                                <a href="#" class="btn button-sm button-theme">Details</a>
-                            </div>
-                        </div>
+                        <!-- Sociallist -->
                     </div>
                 </div>
-                <div class="agent-box-big clearfix">
-                    <div class="col-lg-4 col-md-4 col-sm-5 agent-box-theme">
-                        <img src="img/team/team-2.jpg" alt="team-2" class="img-responsive">
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-7 agent-content detail">
-                        <!-- Title -->
+                <!-- Agent box end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- Agent box end -->
+                <div class="agent-box">
+                    <!-- Agent img -->
+                    <a href="agent-detail.html" class="agent-img">
+                        <img src="~/assets/img/team/team-1.jpg" alt="team-4" class="img-responsive">
+                    </a>
+                    <!-- Agent content -->
+                    <div class="agent-content">
+                        <!-- title -->
                         <h1 class="title">
-                            <a href="agent-single.html">Karen Paran</a>
+                            <a href="agent-detail.html">Asad Abbas Ranjha</a>
                         </h1>
-                        <!-- contact -->
+                        <!-- Contact -->
                         <div class="contact">
-                            <p class="pgo2">
-                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>info@themevessel.com</a><a href="tel:+554XX-634-7071"><i class="fa fa-phone"></i>+55 4XX-634-7071</a><a href="#"><i class="fa fa-skype"></i>sales.carworld</a>
+                            <p>
+                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>asadranjha110@gmail.com</a>
                             </p>
+                            <p>
+                                <a href="tel:+923006188202"><i class="fa fa-phone"></i>+92 300-6188202</a>
+                            </p>
+
                         </div>
-                        <p>Morbi accumsan ipsum velit nam nec tellus a odio tincidunt auctor a ornare odio sed non mauris<span class="hidden-sm">  vitae erat consequat auctor eu in elit class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos him enaeos mauris in erat</span> </p>
-                        <!-- footer -->
-                        <div class="footer clearfix">
-                            <div class="pull-left">
-                                <!-- social list -->
-                                <ul class="social-list clearfix">
-                                    <li>
-                                        <a href="#" class="facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="twitter">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="linkedin">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="google">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="rss">
-                                            <i class="fa fa-rss"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pull-right">
-                                <a href="#" class="btn button-sm button-theme">Details</a>
-                            </div>
-                        </div>
+                        <!-- Sociallist -->
                     </div>
-                </div>*@
-                <!-- Agent box big end -->
+                </div>
+                <!-- Agent box end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <!-- Agent box end -->
+                <div class="agent-box">
+                    <!-- Agent img -->
+                    <a href="agent-detail.html" class="agent-img">
+                        <img src="~/assets/img/team/team-1.jpg" alt="team-4" class="img-responsive">
+                    </a>
+                    <!-- Agent content -->
+                    <div class="agent-content">
+                        <!-- title -->
+                        <h1 class="title">
+                            <a href="agent-detail.html">Azeem Aslam</a>
+                        </h1>
+                        <!-- Contact -->
+                        <div class="contact">
+                            <p>
+                                <a href="mailto:info@themevessel.com"><i class="fa fa-envelope-o"></i>azeem.aslam83@gmail.com</a>
+                            </p>
+                            <p>
+                                <a href="tel:+923004002543"><i class="fa fa-phone"></i>+92 300-4002543</a>
+                            </p>
+
+                        </div>
+                        <!-- Sociallist -->
+                    </div>
+                </div>
+                <!-- Agent box end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+
             </div>
         </div>
+
+
+
+
         <!-- Page navigation start -->
         @*<nav aria-label="Page navigation">
             <ul class="pagination">
