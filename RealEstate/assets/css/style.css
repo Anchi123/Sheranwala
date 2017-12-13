@@ -1,5 +1,5 @@
 html, body{height:100%;}
-body{font-family:'Open Sans', sans-serif;background:#f8f8f8;}
+body{font-family:'Open Sans', sans-serif;background:#FFF;}
 a{cursor:pointer;color:#555;}
 a:hover{text-decoration:none;}
 .delay-02s{animation-delay:0.2s;-webkit-animation-delay:0.2s}
@@ -87,7 +87,7 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .top-header .sign-in, .top-header .sign-in:hover{text-decoration:none;line-height:36px;font-size:11px;border-radius:2px;text-transform:uppercase;font-weight:600;}
 .main-header{width:100%;box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.05);}
 .navbar-default{background:none;border:none;margin-bottom:0;border-radius:0;}
-.logo{padding:19px 0;float:left;margin-right:50px;}
+.logo{padding:19px 0;float:left;margin-right:0px;}
 .logo img{height:40px;}
 .main-header .navbar-default .nav > li > a{position:relative;display:block;padding:20px 20px 26px;font-size:14px;border-top:solid 5px transparent;line-height:27px;letter-spacing:1px;color:#4a4747;outline:none;cursor:pointer;}
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{background-color:#fbfbfb;}
@@ -844,6 +844,14 @@ table.manage-table .title-container .title span{display:block;}
 .our-partners .carousel-inner > .item.left,
 .our-partners .carousel-inner > .item.prev.right,
 .our-partners .carousel-inner > .item.active{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);left:0;}
+}
+.our-projects {
+    background-color: crimson;
+    color: white;
+    padding: 15px;
+    line-height: 3;
+    border-radius: 32px;
+    border: 1px solid crimson;
 }
 @media all and (min-width:992px){.our-partners .carousel-inner > .active.left,
 .our-partners .carousel-inner > .prev{left:-25%;}
