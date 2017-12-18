@@ -3,12 +3,11 @@ a:hover {
 }
 
 #page_scroller {
-    background: #95c41f;
-
+    background: crimson;
 }
 
-.property-content .title a{
-    color: #95c41f;
+.property-content .title a {
+    color: crimson;
 }
 
 .setting-button{
@@ -19,16 +18,16 @@ a:hover {
     color: #95c41f;
 }
 
-.list-inline-listing .active{
-    background: #95c41f;
+.list-inline-listing .active {
+    background: crimson;
 }
 
-.list-inline-listing li:hover{
-    background: #95c41f;
+.list-inline-listing li:hover {
+    background: crimson;
 }
 
 .counters {
-    background: #95c41f;
+    background: crimson;
 }
 
 .checkbox-theme input[type="checkbox"]:checked + label::before {
@@ -40,13 +39,13 @@ input[type=checkbox]:checked + label:before {
 }
 
 .button-theme {
-    background: #95c41f;
-    border: 2px solid #95c41f;
+    background: crimson;
+    border: 2px solid crimson;
 }
 
 .button-theme:hover {
-    background: #84ad1d;
-    border: 2px solid #84ad1d;
+    background: darkred;
+    border: 2px solid  crimson;
 }
 
 .error404-content h1 {
@@ -54,8 +53,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .footer-top form .button-small {
-    border: solid 1px #95c41f;
-    background: #95c41f;
+    border: solid 1px crimson;
+    background: crimson;
 }
 
 .properties-amenities ul li i {
@@ -63,7 +62,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .properties-condition ul li i {
-    color: #95c41f;
+    color: crimson;
 }
 
 .banner-detail-box h3{
@@ -113,20 +112,20 @@ input[type=checkbox]:checked + label:before {
 }
 
 .search-button {
-    background: #95c41f;
+    background: crimson;
 
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
-    color: #95c41f !important;
-    border-top: solid 5px #95c41f !important;
+    color: crimson !important;
+    border-top: solid 5px crimson !important;
 }
 
 .main-header .navbar-default .nav > li > a:hover {
-   color: #95c41f;
-    border-top: solid 5px #95c41f;
+    color: crimson;
+    border-top: solid 5px crimson;
 }
 
 .intro-section {
@@ -135,7 +134,7 @@ input[type=checkbox]:checked + label:before {
 
 .search-button:hover {
     color: #fff;
-    background: #84ad1d;
+    background: brown;
 }
 
 .panel-box .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
@@ -154,7 +153,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .heading-properties p i{
-    color: #95c41f;
+    color: crimson;
     margin-right: 5px;
 }
 
@@ -163,7 +162,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .heading-properties h3 span{
-    color: #95c41f;
+    color: crimson;
 }
 
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
@@ -190,20 +189,20 @@ input[type=checkbox]:checked + label:before {
 }
 
 .our-service .content i {
-    background: #95c41f;
+    background: crimson;
 }
 
 .our-service .content h4 {
-    color: #95c41f;
+    color: crimson;
 }
 
-.footer-top .social-list li a:hover{
-    background: #95c41f;
-    border: solid 1px #95c41f;
+.footer-top .social-list li a:hover {
+    background: crimson;
+    border: solid 1px crimson;
 }
 
 .category-content .btn, .category-content .pricing-btn {
-    background: #95c41f;
+    background: crimson;
 }
 
 .agent-box .title a:hover{
@@ -218,9 +217,9 @@ input[type=checkbox]:checked + label:before {
     color: #95c41f;
 }
 
-.dropdown-menu>li>a:hover {
-    color: #95c41f;
-    border-left: solid 5px #95c41f;
+.dropdown-menu > li > a:hover {
+    color: crimson;
+    border-left: solid 5px crimson;
 }
 
 .plan.featured .price-header {
@@ -228,7 +227,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .option-bar .heading-icon{
-    background: #95c41f;
+    background: crimson;
+    border-right: 1px solid #fff;
 }
 .change-view-btn {
     color: #95c41f;
@@ -236,7 +236,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .agent-box .contact p i {
-    color: #95c41f;
+    color: crimson;
 }
 
 .change-view-btn:hover {
@@ -297,7 +297,7 @@ blockquote {
 }
 
 .banner-search-box{
-    border-top: solid 5px #95c41f;
+    border-top: solid 5px crimson;
 }
 
 .agent-box-big .agent-content h1 a:hover{
@@ -327,7 +327,7 @@ blockquote {
 }
 
 .property-tag.featured {
-    background: #95c41f;
+    background: crimson;
 }
 
 .range-slider .ui-widget-header {
@@ -339,8 +339,8 @@ blockquote {
 }
 
 .tags-box ul li a:hover {
-    border: 1px solid #95c41f;
-    background: #95c41f;
+    border: 1px solid crimson;
+    background: crimson;
 }
 
 .latest-tweet a {
@@ -376,7 +376,7 @@ blockquote {
 }
 
 .helping-center .icon {
-    color: #95c41f;
+    color: crimson;
 }
 
 .main-title-2 h1 a:hover{
@@ -392,7 +392,7 @@ blockquote {
 }
 
 .option-bar h4 {
-    color: #95c41f;
+    color: #fff;
 }
 
 .attachments a:hover{

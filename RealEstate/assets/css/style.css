@@ -114,9 +114,9 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .carousel-control{width:0;}
 .carousel-control.left{background:none;}
 .carousel-control.right{background:none;}
-.slider-mover-left{width:40px;height:40px;line-height:45px;position:absolute;top:45%;z-index:5;display:inline-block;left:20px;background:#151515;text-align:center;}
+.slider-mover-left{width:40px;height:40px;line-height:45px;position:absolute;top:45%;z-index:5;display:inline-block;left:20px;background:crimson;text-align:center;}
 .slider-mover-left i{font-size:30px;}
-.slider-mover-right{width:40px;height:40px;line-height:45px;position:absolute;top:45%;z-index:5;display:inline-block;right:20px;background:#151515;text-align:center;}
+.slider-mover-right{width:40px;height:40px;line-height:45px;position:absolute;top:45%;z-index:5;display:inline-block;right:20px;background:crimson;text-align:center;}
 .slider-mover-right i{font-size:30px;}
 .banner .banner-slider-inner{top:100px;display:inline-block;text-shadow:none;right:8%;left:8%;}
 .banner .banner-slider-inner h1{color:#fff;margin-bottom:20px;font-size:70px;font-weight:500;text-shadow:1px 1px 0 rgba(0, 0, 0, .75);text-transform:uppercase;}
@@ -188,7 +188,7 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .property-content .facilities-list{padding:0;margin:0;}
 .property-content .facilities-list li{width:33%;float:left;font-size:13px;line-height:29px;list-style:none;color:#4a4747;}
 .property-content .facilities-list li i{margin-right:5px;}
-.property-content .property-footer{border-top:solid 1px #f1f1f1;padding-top:15px;margin-top:15px;color:#4a4747;}
+.property-content .property-footer{border-top:solid 1px crimson;padding-top:15px;margin-top:15px;color:#4a4747;}
 .property-content .property-footer .right{float:right;}
 .property-content .property-footer a{color:#4a4747;}
 .property-footer a{color:#4a4747;}
@@ -212,7 +212,7 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .properties-panel-box .nav-tabs > li > a:hover{background:transparent;border-radius:0;}
 .properties-panel-box .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{color:#fff;cursor:default;border:none;border-radius:0;border-bottom-color:transparent;}
 .list-inline-listing{padding:0;margin:0 0 30px 0;text-align:center;}
-.list-inline-listing li{padding:7px 25px;margin:4px;border:2px solid #e6e6e6;color:#a7a1a1;border-radius:12px;box-shadow:none;font-size:12px;font-weight:600;}
+.list-inline-listing li{padding:7px 25px;margin:4px;border:2px solid crimson;color:#a7a1a1;border-radius:12px;box-shadow:none;font-size:12px;font-weight:600;}
 .list-inline-listing li:hover{color:#fff;box-shadow:none;}
 .list-inline-listing .active{color:#fff;box-shadow:none;}
 .recently-properties .property-content .facilities-list li{width:50%;float:left;font-size:13px;line-height:29px;list-style:none;color:#4a4747;}
@@ -230,8 +230,8 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .agent-section .our-partners .carousel-control .fa{font-size:32px;text-shadow:none;color:#fff;top:45%;font-weight:300;background:#a09d9d;width:35px;height:35px;line-height:30px;}
 .customer-say .our-partners img{-webkit-filter:grayscale(0%);-moz-filter:grayscale(0%);filter:grayscale(0%);}
 .customer-say .our-partners img:hover{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);filter:grayscale(100%);}
-.chevron-icon .our-partners .carousel-control .icon-prev{font-size:21px;text-shadow:none;color:#fff;top:45%;left:-68px;font-weight:300;background:#a09d9d;width:30px;height:30px;line-height:26px;}
-.chevron-icon .our-partners .carousel-control .icon-next{font-size:21px;text-shadow:none;color:#fff;top:45%;right:24px;font-weight:300;background:#a09d9d;width:30px;height:30px;line-height:26px;}
+.chevron-icon .our-partners .carousel-control .icon-prev{font-size:21px;text-shadow:none;color:#fff;top:45%;left:-68px;font-weight:300;background:crimson;width:30px;height:30px;line-height:26px;}
+.chevron-icon .our-partners .carousel-control .icon-next{font-size:21px;text-shadow:none;color:#fff;top:45%;right:24px;font-weight:300;background:crimson;width:30px;height:30px;line-height:26px;}
 .our-service{text-align:center;}
 .our-service .content{max-width:262px;text-align:center;margin:0 auto 30px;padding:20px;}
 .our-service .content:hover{padding:20px;background:#fff;}
@@ -326,9 +326,9 @@ footer ul{margin:0;padding:0;list-style:none;}
 .testimonials .content ul li{list-style:none;display:inline-block;color:orange;}
 .testimonials .content .author-name{text-transform:uppercase;font-weight:bold;margin-bottom:10px;}
 .testimonials .content{margin-bottom:30px;}
-.testimonials .slider-mover-left{width:30px;height:30px;line-height:27px;position:absolute;top:100%;z-index:5;display:inline-block;border:solid 1px #1B1410;text-align:center;}
+.testimonials .slider-mover-left{width:30px;height:30px;line-height:27px;position:absolute;top:100%;z-index:5;display:inline-block;border:solid 1px crimson;text-align:center;}
 .testimonials .slider-mover-left i{font-size:20px;}
-.testimonials .slider-mover-right{width:30px;height:30px;line-height:27px;position:absolute;top:100%;z-index:5;display:inline-block;right:0;border:solid 1px #1B1410;text-align:center;}
+.testimonials .slider-mover-right{width:30px;height:30px;line-height:27px;position:absolute;top:100%;z-index:5;display:inline-block;right:0;border:solid 1px crimson;text-align:center;}
 .testimonials .slider-mover-right i{font-size:20px;}
 .testimonial-3{padding:0!important;}
 .testimonial-section{position:relative;padding:70px 0 95px;display:inline-block;width:100%;float:left;background:#eaeaea;}
@@ -374,7 +374,7 @@ footer ul{margin:0;padding:0;list-style:none;}
 .counter-box p{font-size:16px;}
 .agent-box{margin:0 auto 30px;background:white;}
 .agent-box:hover{box-shadow:0 0 0 0 rgba(0, 0, 0, 0.10), 0 3px 3px 0 rgba(0, 0, 0, 0.10);}
-.agent-box .contact{padding-bottom:15px;border-bottom:1px solid rgba(0, 0, 0, 0.09);margin-bottom:15px;}
+.agent-box .contact{padding-bottom:15px;border-bottom:1px solid crimson;margin-bottom:15px;}
 .agent-box .agent-img img{background:#d0cece;}
 .agent-box .contact p{display:block;padding-left:30px;position:relative;line-height:30px;margin-bottom:0;}
 .agent-box .contact p i{font-size:17px;position:absolute;left:0;line-height:30px;}
@@ -436,7 +436,7 @@ footer ul{margin:0;padding:0;list-style:none;}
 .social-list li .linkedin:hover{background:#1c82ca;color:#fff;}
 .social-list li .google:hover{background:#dc4e41;color:#fff;}
 .social-list li .rss:hover{background:#e78733;color:#fff;}
-.option-bar{background:#fff;border-radius:3px;height:50px;margin-bottom:30px;}
+.option-bar{background:crimson;border-radius:3px;height:50px;margin-bottom:30px;}
 .option-bar h4{line-height:50px;display:inline-block;padding-right:20px;border-radius:3px 0 0 3px;margin:0 0 0;font-weight:600;}
 .option-bar .heading-icon{width:50px;text-align:center;margin-right:20px;display:inline-block;border-radius:3px 0 0 3px;position:relative;color:#fff;}
 .option-bar .sorting{padding:8px 12px;background:#FFF;border:1px solid #EEE;color:#999;margin-right:5px;font-size:13px;font-weight:300;}
@@ -588,12 +588,17 @@ a:hover{text-decoration:none;color:#4a4747;}
 .about-city-estate .main-title-2 h1{font-weight:600;font-size:30px;}
 .about-text p{line-height:23px;color:#4a4747;font-size:13px;margin-bottom:20px;}
 .about-text{margin-top:15px;}
-.sub-banner{background:url(../img/sub-banner-1.jpg);background-size:cover;padding:100px 0;}
-.breadcrumb-area{color:#fff;}
+.sub-banner {
+    background: url(../img/sub-banner-2.jpg);
+    background-size: cover;
+    padding: 100px 0;
+    
+}
+.breadcrumb-area{color:#FFF;}
 .breadcrumb-area h1{margin:0 0 15px;font-weight:700;text-transform:uppercase;}
 .breadcrumbs{padding:0;margin:0;}
 .breadcrumbs li{display:inline-block;list-style:none;font-weight:600;font-size:18px;}
-.breadcrumbs li a{color:#fff;}
+.breadcrumbs li a{color: #FFF;}
 .breadcrumbs .active:before{content:"\f105";font-family:"FontAwesome";font-size:14px;margin-right:15px;font-weight:600;}
 .breadcrumbs .active{margin-left:15px;}
 .helping-center{margin-bottom:30px;padding-left:50px;text-align:left;color:#4a4747;}
