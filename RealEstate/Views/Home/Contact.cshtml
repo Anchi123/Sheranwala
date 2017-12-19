@@ -19,17 +19,17 @@
 <div class="contact-body content-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                 <!-- Contact form start -->
-             
+
                 <div class="contact-form">
                     <div class="main-title-2">
-                        <h1><span>Contact</span> with us</h1>
+                        <h1><span>Contact</span>us</h1>
                     </div>
                     @using (Html.BeginForm("Contact", "Home", Model, FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
-                    @*<form id="contact_form" action="index.html" method="POST" enctype="multipart/form-data">*@
+                        @*<form id="contact_form" action="index.html" method="POST" enctype="multipart/form-data">*@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group fullname">
@@ -62,66 +62,88 @@
                                 </div>
                             </div>
                         </div>
-                        if(ViewBag.msg != null)
+                        if (ViewBag.msg != null)
                         {
                             <div class="text-success">Your Message Sent Successfully</div>
                         }
-                    @*</form>*@
+                        @*</form>*@
                     }
                 </div>
-               
-                <!-- Contact form end -->
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <!-- Contact details start -->
-                <div class="contact-details">
-                    <div class="main-title-2">
-                        <h1><span>Our</span> address</h1>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <!-- Opening hours start -->
+                        <div class="opening-hours">
+                            <div class="main-title-2">
+                                <h1><span>opening</span> hours</h1>
+                            </div>
+                            <ul class="list-style-none">
+                                <li><strong>Sunday</strong> <span class="text-red"> 10:00 AM to 7:00 PM </span></li>
+                                <li><strong>Monday</strong> <span> 10:00 AM to 7:00 PM</span></li>
+                                <li><strong>Tuesday </strong> <span> 10:00 AM to 7:00 PM</span></li>
+                                <li><strong>Wednesday </strong> <span> 10:00 AM to 7:00 PM</span></li>
+                                <li><strong>Thursday </strong> <span> 10:00 AM to 7:00 PM</span></li>
+                                <li><strong>Friday </strong> <span> Closed </span></li>
+                                <li><strong>Saturday </strong> <span> 10:00 AM to 7:00 PM</span></li>
+                            </ul>
+                        </div>
+                        <!-- Opening hours end  -->
                     </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-map-marker"></i>
+                    <div class="col-md-8 col-sm-6">
+                        <!-- Contact details start -->
+                        <div class="contact-details">
+                            <div class="main-title-2">
+                                <h1><span>Our</span> address</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Office Address</h4>
+                                            <p>
+                                                19 F PIA society near Wapda Town round About<br>
+                                                54000 Lahore, Pakistan
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Phone Number</h4>
+                                            <p>
+                                                <a href="tel:0477-0477-8556-552">office: +92 111-228-228</a>
+                                            </p>
+                                            <p>
+                                                <a href="tel:+55-417-634-7071">Mobile: +92 300-9191916</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                            </div>
                         </div>
-                        <div class="media-body">
-                            <h4>Office Address</h4>
-                            <p>F -19, PIA Society ,Chowk Wapda Town Round about ,Lahore Pakistan.</p>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4>Phone Number</h4>
-                            <p>
-                                <a href="tel:+92-42-111-228-228">office: +92-42-111-228-228</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="media mrg-btm-0">
-                        <div class="media-left">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4>Email Address</h4>
-                            <p>
-                                <a href="mailto:sheranwalagroup@yahoo.com">sheranwalagroup@yahoo.com</a>
-                            </p>
-                        </div>
+                        <!-- Contact details end -->
                     </div>
                 </div>
-                <!-- Contact details end -->
             </div>
+                <!-- Contact form end -->
+            </div>
+           
         </div>
     </div>
 </div>
 <!-- Contact body end -->
 <!-- Google map start -->
-<div class="section">
+<!--<div class="section">
     <div class="map">
         <div id="map" class="contact-map"></div>
     </div>
-</div>
+</div>-->
 <!-- Google map end -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDayd96Rd_d6hogwT2tTChV7FSVy-b4Mk"></script>
 <script>

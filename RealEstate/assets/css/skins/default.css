@@ -97,8 +97,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .rightside-navbar li .button {
-    color: #95c41f !important;
-    border: 2px solid #95c41f !important;
+    color: crimson !important;
+    border: 2px solid crimson !important;
 }
 
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
@@ -108,7 +108,7 @@ input[type=checkbox]:checked + label:before {
 
 
 .rightside-navbar li .button:hover {
-    background: #95c41f !important;
+    background: crimson !important;
 }
 
 .search-button {
@@ -360,7 +360,7 @@ blockquote {
 }
 
 .contact-details .media .media-left i {
-    background: #95c41f;
+    background: crimson;
 }
 
 .about-text ul li i {
@@ -372,7 +372,7 @@ blockquote {
 }
 
 .top-header ul li a:hover {
-    color: #95c41f;
+    color: crimson;
 }
 
 .helping-center .icon {
