@@ -76,13 +76,13 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .tab-style-2-line.tabs-below > .nav-tabs > li.active{margin-bottom:-2px;border-bottom:0;}
 .tab-style-2-line.tabs-below > .tab-content{margin-top:-10px;border-top:0;border-bottom:1px solid #eee;padding-bottom:25px;}
 .tab-style-2-line.tabs-below > .tab-content p{margin-bottom:20px;}
-.top-header{background-color:#111111;}
+.top-header{background-color:crimson;}
 .top-header .list-inline{padding:10px 0;}
-.list-inline a{text-decoration:none;color:#aaa;margin-right:15px;font-size:11px;}
+.list-inline a{text-decoration:none;color:aliceblue;margin-right:15px;font-size:11px;}
 .list-inline a i{margin-right:5px;}
 .top-header ul{margin:0;padding:0;}
 .top-header ul li{padding:0 5px;height:40px;display:inline-block;text-align:center;line-height:40px;color:#aaa;}
-.top-header ul li a{text-decoration:none;color:#aaa;}
+.top-header ul li a{text-decoration:none;color:aliceblue;}
 .top-header ul li a i{font-size:13px;}
 .top-header .sign-in, .top-header .sign-in:hover{text-decoration:none;line-height:36px;font-size:11px;border-radius:2px;text-transform:uppercase;font-weight:600;}
 .main-header{width:100%;box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.05);}
@@ -474,7 +474,7 @@ footer ul{margin:0;padding:0;list-style:none;}
 .error404-content h2{color:#000;font-size:35px;font-weight:600;margin-bottom:20px;}
 .error404-content p{font-size:20px;color:#4a4747;font-weight:300;margin-bottom:20px;}
 .blog-box{margin-bottom:30px;border-radius:0;padding:0;border:none;color:#4a4747;background:transparent;}
-a:hover{text-decoration:none;color:crimson;}
+a:hover{text-decoration:none;color:whitesmoke;}
 .blog-box .detail{padding:30px;color:#4a4747;background:#fff;width:100%;float:left;}
 .blog-box .detail .title a{text-decoration:none;}
 .blog-box .detail .title a:hover{color:#7a7677;}
