@@ -1032,6 +1032,7 @@
     <Content Include="Views\Galleries\Create.cshtml" />
     <Content Include="Views\Galleries\Edit.cshtml" />
     <Content Include="Views\Galleries\Index.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

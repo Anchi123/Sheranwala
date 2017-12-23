@@ -80,5 +80,9 @@ namespace RealEstate.Controllers
             var mod = bl.GalleryList();
             return View(mod);
         }
+        public ActionResult Blog()
+        {
+            return View();
+        }
     }
 }
