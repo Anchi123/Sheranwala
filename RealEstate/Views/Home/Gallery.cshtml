@@ -22,10 +22,11 @@
         <div class="row">
             @foreach (var v in Model)
             {
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            @*<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <!-- Blog box start -->
                 <div class="thumbnail blog-box clearfix">
-                    <img src="~/Images/@("gal"+v.RowID+v.ImagePath)" alt="blog-05" class="img-responsive">
+                    <img src="~/Images/@("gal"+v.RowID+v.ImagePath)" alt="img-1" class="img-responsive">
+
                     <!-- detail -->
                     <div class="caption detail">
                         <!-- Main title -->
@@ -39,7 +40,78 @@
                 </div>
              
                 <!-- Blog box end -->
+            </div>*@
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <!-- Blog box start -->
+                    <div class="thumbnail blog-box clearfix">
+                        <img src="~/assets/img/Gallery/lmc4.2.png" alt="img-1" class="img-responsive">
+
+                        <!-- detail -->
+                       
+                    </div>
+
+                    <!-- Blog box end -->
+                </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <!-- Blog box start -->
+                <div class="thumbnail blog-box clearfix">
+                    <img src="~/assets/img/Gallery/Lmc6.4.png" alt="img-2" class="img-responsive">
+
+                    <!-- detail -->
+                    
+                </div>
+
+                <!-- Blog box end -->
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <!-- Blog box start -->
+                <div class="thumbnail blog-box clearfix">
+                    <img src="~/assets/img/Gallery/b-flyer.png" alt="img-3" class="img-responsive">
+
+                    <!-- detail -->
+                   
+                </div>
+
+                <!-- Blog box end -->
+            </div>
+            }
+        </div>
+        <div class="row">
+            @foreach (var v in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <!-- Blog box start -->
+                    <div class="thumbnail blog-box clearfix">
+                        <img src="~/assets/img/Gallery/private-land-jia-baga1.2.png" alt="img-4" class="img-responsive">
+
+                        <!-- detail -->
+
+                    </div>
+
+                    <!-- Blog box end -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <!-- Blog box start -->
+                    <div class="thumbnail blog-box clearfix">
+                        <img src="~/assets/img/Gallery/s-adver.jpg" alt="img-2" class="img-responsive">
+
+                        <!-- detail -->
+
+                    </div>
+
+                    <!-- Blog box end -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <!-- Blog box start -->
+                    <div class="thumbnail blog-box clearfix">
+                        <img src="~/assets/img/Gallery/sheranwala-dream-ad.png" alt="img-3" class="img-responsive">
+
+                        <!-- detail -->
+
+                    </div>
+
+                    <!-- Blog box end -->
+                </div>
             }
         </div>
     </div>
