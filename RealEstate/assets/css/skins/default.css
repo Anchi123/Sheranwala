@@ -182,8 +182,6 @@ input[type=checkbox]:checked + label:before {
 .bootstrap-select .dropdown-menu > .active > a:hover {
     color: #95c41f;
 }
-
-
 .for-sale {
     background: #95c41f;
 }
@@ -267,18 +265,18 @@ input[type=checkbox]:checked + label:before {
 }
 
 .pagination > li > a:hover {
-    background: #95c41f;
-    border-color: #95c41f;
+    background: crimson;
+    border-color: crimson;
 }
 
 .pagination > .active > a {
-    background: #95c41f;
-    border-color: #95c41f;
+    background: crimson;
+    border-color: crimson;
 }
 
 .pagination > .active > a:hover {
-    background: #95c41f;
-    border-color: #95c41f;
+    background: crimson;
+    border-color: crimson;
 }
 
 .blog-box .detail .post-meta span a i {
