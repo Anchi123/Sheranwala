@@ -222,7 +222,7 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .recently-properties .our-partners .carousel-control{width:0%;background-image:none;}
 .recently-properties .our-partners img{-webkit-filter:grayscale(0%);-moz-filter:grayscale(0%);filter:grayscale(0%);}
 .recently-properties .our-partners img:hover{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);filter:grayscale(100%);}
-.recently-properties .property .button{font-size:12px;padding:5px 11px;}
+.recently-properties .property .button{font-size:12px;padding:5px 11px;z-index: 999;}
 .recently-properties .property-content .title{font-size:17px;}
 .recently-properties .property-price{font-size:16px;}
 .agent-section .our-partners img{-webkit-filter:grayscale(0%);-moz-filter:grayscale(0%);filter:grayscale(0%);}
