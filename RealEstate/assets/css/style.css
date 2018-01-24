@@ -134,7 +134,7 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .search-fields button{border-radius:1px;box-shadow:none;border:none;background:#fff;}
 .search-button{cursor:pointer;padding:13px 20px;letter-spacing:1px;font-size:13px;font-weight:600;text-transform:uppercase;color:#FFF;transition:.5s;border-radius:2px;border:none;width:100%;}
 .search-button:hover{color:#fff;}
-.banner-search-box{max-width:600px;background-color:rgba(255, 255, 255, 0.8);padding:30px 15px 0;display:inline-block;float:left;}
+.banner-search-box{max-width:600px;background-color:rgba(255, 255, 255, 0.8);padding:30px 15px 0;display:inline-block;float:right;}
 .banner-search-box .search-area{padding:0;}
 .bootstrap-select{width:100% !important;font-family:'Roboto', sans-serif !important;;}
 .bootstrap-select button{color:#999;border-radius:2px;outline:none;}
@@ -165,9 +165,14 @@ input[type=checkbox]:checked + label:before{display:inline-block;font:normal nor
 .main-title h1{font-weight:700;margin:0 0 15px;color:#3f3f3f;text-transform:uppercase;font-size:27px;}
 .main-title h1 span{font-weight:700;}
 .main-title-2{margin-bottom:30px;}
-.main-title-2 h1{font-size:21px;margin:0 0 10px;font-weight:400;color:#212121;}
+.main-title-2 h1{font-size:21px;margin:0 0 0px;font-weight:400;color:aliceblue;}
 .main-title-2 h1 a{text-decoration:none;color:#212121;}
 .main-title-2 h1 span{font-weight:700;}
+.properties-details-page .main-title-2 {
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 4px;
+}
 .property{background:#fff;position:relative;margin-bottom:30px;overflow:hidden;}
 .property:hover{box-shadow:0 0 0 0 rgba(0, 0, 0, 0.10), 0 3px 3px 0 rgba(0, 0, 0, 0.10);}
 .property-img{position:relative;display:block;overflow:hidden;}
