@@ -41,27 +41,8 @@
     <script type="text/javascript" src="~/assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-    @*<div class="page_loader"></div>*@
-    <!-- Option Panel -->
-    @*<div class="option-panel option-panel-collased">
-        <h2>Change Color</h2>
-        <div class="color-plate default-plate" data-color="default"></div>
-        <div class="color-plate blue-plate" data-color="blue"></div>
-        <div class="color-plate yellow-plate" data-color="yellow"></div>
-        <div class="color-plate red-plate" data-color="red"></div>
-        <div class="color-plate green-light-plate" data-color="green-light"></div>
-        <div class="color-plate orange-plate" data-color="orange"></div>
-        <div class="color-plate yellow-light-plate" data-color="yellow-light"></div>
-        <div class="color-plate green-light-2-plate" data-color="green-light-2"></div>
-        <div class="color-plate olive-plate" data-color="olive"></div>
-        <div class="color-plate purple-plate" data-color="purple"></div>
-        <div class="color-plate blue-light-plate" data-color="blue-light"></div>
-        <div class="color-plate brown-plate" data-color="brown"></div>
-        <div class="setting-button">
-            <i class="fa fa-gear"></i>
-        </div>
-    </div>*@
+<body style=" background-image :url(../../assets/img/login-bg.jpg); overflow: hidden;">
+  
     <!-- Option Panel -->
     <!-- Content area start -->
     <div class="content-area">
@@ -76,7 +57,7 @@
                             
                             <!-- Main title -->
                             <div class="main-title">
-                                <h1><span><a href="#"><img src="~/assets/img/logos/s-logo.png" class="img-responsive" /></a></span></h1>
+                                <h1><span><a href="/Home/Index"><img src="~/assets/img/logos/s-logo.png" class="img-responsive" /></a></span></h1>
                                 <h1><span>Login</span></h1>
                             </div>
                             <!-- Form start -->
@@ -94,16 +75,16 @@
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                     @*<input type="password" name="Password" class="input-text" placeholder="Password">*@
                                 </div>
-                                @*<div class="checkbox">
+                                <div class="checkbox">
                                     <div class="ez-checkbox pull-left">
                                         <label>
                                             <input type="checkbox" class="ez-hide">
                                             Remember me
                                         </label>
                                     </div>
-                                    <a href="forgot-password.html" class="link-not-important pull-right">Forgot Password</a>
+                                    @*<a href="forgot-password.html" class="link-not-important pull-right">Forgot Password</a>*@
                                     <div class="clearfix"></div>
-                                </div>*@
+                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="button-md button-theme btn-block">login</button>
                                 </div>
