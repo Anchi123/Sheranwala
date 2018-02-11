@@ -84,5 +84,9 @@ namespace RealEstate.Controllers
         {
             return View();
         }
+        public ActionResult BlogDetail()
+        {
+            return View();
+        }
     }
 }
