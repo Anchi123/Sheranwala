@@ -1215,7 +1215,7 @@ input[type=checkbox]:checked + label:before {
     }
 
 .recently-properties .property-content .facilities-list li {
-    width: 50%;
+    width: auto;
     float: left;
     font-size: 13px;
     line-height: 29px;
