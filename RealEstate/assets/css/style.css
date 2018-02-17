@@ -5375,6 +5375,11 @@ table.manage-table {
         margin-bottom: 0;
     }
 
+    .s-height, .heights-price {
+        font-size: 30px;
+        color: crimson;
+    }
+
     .blog-box .detail {
         padding: 20px;
     }
