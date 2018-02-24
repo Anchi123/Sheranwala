@@ -616,7 +616,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .banner .item {
-    height: 550px;
+    height: 500px;
 }
 
     .banner .item img {
@@ -720,6 +720,18 @@ input[type=checkbox]:checked + label:before {
         font-size: 15px !important;
         line-height: 23px;
     }
+
+.latest-update .block-heading {
+    padding: 9.4px 0px;
+    border: 2px solid crimson;
+   
+}
+
+.latest-update .heading-icon {
+    background-color: crimson;
+    color: white;
+    padding: 13px 40px;
+} 
 
 .search-area {
     background: #e6e6e6;
@@ -980,11 +992,14 @@ input[type=checkbox]:checked + label:before {
 .property-price {
     color: white;
     position: absolute;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 17px;
     bottom: 15px;
     left: 15px;
     z-index: 20;
+    background-color: crimson;
+    padding: 5px 20px;
+    border-radius: 4px;
 }
 
 .property .button, input[type="submit"] {
@@ -2542,10 +2557,14 @@ footer ul {
     color: #fff;
 }
 
+.option-bar .col-sm-6 {
+    width: auto;
+}
+
 .option-bar {
     background: crimson;
     border-radius: 3px;
-    height: 50px;
+    height: auto;
     margin-bottom: 30px;
 }
 
@@ -5375,10 +5394,10 @@ table.manage-table {
         margin-bottom: 0;
     }
 
-    .s-height, .heights-price {
+    /*.s-height, .heights-price {
         font-size: 30px;
         color: crimson;
-    }
+    }*/
 
     .blog-box .detail {
         padding: 20px;
@@ -5432,7 +5451,7 @@ table.manage-table {
     }
 
     .option-bar .cod-pad {
-        padding: 0 15px 0 0;
+        padding: 0 15px 0 38px;
     }
 
     .form-content-box .details {

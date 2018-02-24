@@ -317,6 +317,14 @@
     </div>
 </div>
 
+
+<div class="latest-update">
+    <div class="block-heading">
+        <span class="heading-icon"><i class="fa fa-newspaper-o"></i> Latest Update </span>
+        <span id="typewriter" style="margin-left: 25px; font-size: 18px; color: #b92c28;"></span>
+    </div>
+</div>
+
 <!-- Search area start -->
 <!-- Featured properties start -->
 @Html.Action("_HomeFeatured")
@@ -524,3 +532,16 @@
     }
 </script>
 <script type="text/javascript" src="~/assets/js/app.js"></script>
+<script type="text/javascript" src="~/assets/js/jquery.typewriter.js"></script>
+<script>
+    $('#typewriter').typewriter({
+        prefix: " ",
+        text: [
+            "Lahore Motorway City is the most hot society now in these days Book your plots Now",
+            "Lahore Motorway City plots 5 Marla, 7 Marla, 10 marla avaliable Book Now"
+        ],
+        typeDelay: 50,
+        waitingTime: 1600,
+        blinkSpeed: 200
+    });
+</script>

@@ -41,7 +41,7 @@
                 <!-- Option bar start -->
                 <div class="option-bar">
                     <div class="row">
-                        <div class="col-lg-6 col-md-5 col-sm-5 col-xs-2">
+                        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-2">
                             <h4>
                                 <span class="heading-icon">
                                     <i class="fa fa-th-list"></i>
@@ -49,7 +49,18 @@
                                 <span class="hidden-xs">Properties List</span>
                             </h4>
                         </div>
-                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-10 cod-pad">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-9 cod-pad">
+                            <div class="btn-group">
+                                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Select Property <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="~/Property/Properties/Sale">Sale</a></li>
+                                    <li><a href="~/Property/Properties/Rent">Rent</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-9 cod-pad">
                             @(Html.Kendo().ComboBox().Name("Order").BindTo(new List<SelectListItem>() {
               new SelectListItem() {
                 Text = "New To Old", Value = "1"
