@@ -511,12 +511,12 @@ table.manage-table td.action a:hover{
     }
 
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-        background-color: #95c41f;
+        background-color: crimson;
         color: #fff! important;
     }
 
     .main-header .navbar-default .nav > li > a:hover {
-        background: #95c41f;
+        background-color: crimson;
     }
 
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {

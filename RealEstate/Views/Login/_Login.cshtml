@@ -1,10 +1,31 @@
 ﻿@model string
 
 @if (Model != "")
+
 {
-    <i class="sign-in"> @Model</i>
-    <a href="/Login/ChangePassword" class="sign-in"><i class="fa fa-user"></i> Change Password</a>
-    <a href="/Login/Logout" class="sign-in"><i class="fa fa-sign-in"></i> Logout</a>
+    <div class="btn-group login-main">
+        <i class="sign-in fa fa-user" style="float:left;margin-right:10px;"> @Model </i>
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:none;">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li> <a href="/Login/ChangePassword" class="sign-in"><i class="fa fa-user"></i> Change Password </a></li>
+            <li> <a href="/Login/Logout" class="sign-in"><i class="fa fa-sign-in"></i> Logout </a></li> 
+        </ul>
+    </div>
+
+    @*<i class="sign-in fa fa-user" style="float:left;"> @Model</i>
+    <div class="dropdown" style="float:right;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="/Login/ChangePassword" class="sign-in"><i class="fa fa-user"></i> Change Password</a></li> 
+           <li><a href="/Login/Logout" class="sign-in"><i class="fa fa-sign-in"></i> Logout</a></li> 
+        </ul>
+    </div>*@
+    
 }
 else
 {

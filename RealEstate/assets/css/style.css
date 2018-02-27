@@ -460,7 +460,7 @@ input[type=checkbox]:checked + label:before {
         display: inline-block;
         text-align: center;
         line-height: 40px;
-        color: #aaa;
+        color: aliceblue;
     }
 
         .top-header ul li a {
@@ -479,6 +479,11 @@ input[type=checkbox]:checked + label:before {
     border-radius: 2px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+
+.login-main .dropdown-menu {
+    background-color: crimson;
 }
 
 .main-header {
@@ -520,13 +525,13 @@ input[type=checkbox]:checked + label:before {
     background-color: #fbfbfb;
 }
 
-.navbar-nav > li {
+/*.navbar-nav > li {
     z-index: 9999;
-}
+}*/
 
 .dropdown-menu > li > a {
     display: block;
-    padding: 15px 15px;
+    padding: 0px 10px;
     clear: both;
     font-weight: normal;
     line-height: 1.42857143;
@@ -534,7 +539,7 @@ input[type=checkbox]:checked + label:before {
     font-size: 13px;
     white-space: nowrap;
     border-left: solid 5px transparent;
-    background: #fbfbfb;
+    background: none;
     cursor: pointer !important;
     outline: none;
 }
@@ -908,7 +913,7 @@ input[type=checkbox]:checked + label:before {
 
 .dropdown-menu > li > a:hover {
     text-decoration: none;
-    background-color: white;
+    background-color: crimson;
 }
 
 .main-title {
@@ -3371,9 +3376,9 @@ a:hover {
     width: 100%;
     padding: 10px 17px;
     font-size: 13px;
-    border: 1px solid #e8e7e7;
+    border: 1px solid crimson;
     outline: none;
-    color: #6c6c6c;
+    color: crimson;
     height: 40px;
     border-radius: 3px;
 }
