@@ -739,7 +739,7 @@ input[type=checkbox]:checked + label:before {
 } 
 
 .search-area {
-    background: #e6e6e6;
+    background: none;
     padding: 40px 0 10px;
 }
 
