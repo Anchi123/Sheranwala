@@ -735,14 +735,28 @@ input[type=checkbox]:checked + label:before {
 .latest-update .heading-icon {
     background-color: crimson;
     color: white;
-    padding: 20px 40px;
+    padding: 13px 40px;
 }
 
-@media only screen and (max-width : 720px) {
+
+@media only screen and (max-width : 736px) {
+    .latest-update .heading-icon {
+        background-color: crimson;
+        color: white;
+        padding: 19px 15px 14px 15px;
+    }
+
+    #typewriter {
+        line-height : 35px;
+    }
+}
+
+
+/*@media only screen and (max-width : 720px) {
     .latest-update {
         visibility: visible;
     }
-}
+}*/
 
 
 
