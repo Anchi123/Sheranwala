@@ -735,8 +735,16 @@ input[type=checkbox]:checked + label:before {
 .latest-update .heading-icon {
     background-color: crimson;
     color: white;
-    padding: 13px 40px;
-} 
+    padding: 20px 40px;
+}
+
+@media only screen and (max-width : 720px) {
+    .latest-update {
+        visibility: visible;
+    }
+}
+
+
 
 .search-area {
     background: none;
@@ -5597,3 +5605,9 @@ table.manage-table {
 .img-inside-map {
     height: 222px;
 }
+}
+
+
+
+
+
