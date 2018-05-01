@@ -10,11 +10,11 @@ a:hover {
     color: crimson;
 }
 
-.setting-button{
+.setting-button {
     background: #95c41f;
 }
 
-.option-panel h2{
+.option-panel h2 {
     color: #95c41f;
 }
 
@@ -43,10 +43,10 @@ input[type=checkbox]:checked + label:before {
     border: 2px solid crimson;
 }
 
-.button-theme:hover {
-    background: darkred;
-    border: 2px solid  crimson;
-}
+    .button-theme:hover {
+        background: darkred;
+        border: 2px solid crimson;
+    }
 
 .error404-content h1 {
     color: #95c41f;
@@ -65,7 +65,7 @@ input[type=checkbox]:checked + label:before {
     color: crimson;
 }
 
-.banner-detail-box h3{
+.banner-detail-box h3 {
     color: #95c41f;
 }
 
@@ -74,23 +74,24 @@ input[type=checkbox]:checked + label:before {
     color: #95c41f;
 }
 
-.border-button-theme:hover {
-    background: #95c41f;
-    color: #fff !important;
-}
+    .border-button-theme:hover {
+        background: #95c41f;
+        color: #fff !important;
+    }
 
 .theme-tabs .nav-tabs > li > a {
     background: #95c41f;
 }
 
-.theme-tabs .nav-tabs > li.active > a,
-.theme-tabs .nav-tabs > li > a:hover {
-    color: #95c41f; !important;
-}
+    .theme-tabs .nav-tabs > li.active > a,
+    .theme-tabs .nav-tabs > li > a:hover {
+        color: #95c41f;
+        !important;
+    }
 
-.theme-tabs .nav-tabs > li > a::after {
-    background: #95c41f;
-}
+    .theme-tabs .nav-tabs > li > a::after {
+        background: #95c41f;
+    }
 
 .theme-tabs .tab-nav > li > a::after {
     background: #95c41f none repeat scroll 0% 0%;
@@ -101,7 +102,7 @@ input[type=checkbox]:checked + label:before {
     border: 2px solid crimson !important;
 }
 
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
     border-color: #95c41f;
     border-bottom: transparent;
 }
@@ -113,7 +114,6 @@ input[type=checkbox]:checked + label:before {
 
 .search-button {
     background: crimson;
-
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -137,13 +137,13 @@ input[type=checkbox]:checked + label:before {
     background: brown;
 }
 
-.panel-box .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-    background: #95c41f;
+.panel-box .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background: crimson;
     color: #fff;
     box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.15);
 }
 
-.properties-panel-box .nav-tabs>li>a:hover {
+.properties-panel-box .nav-tabs > li > a:hover {
     color: #fff;
     background: #95c41f;
 }
@@ -152,16 +152,16 @@ input[type=checkbox]:checked + label:before {
     border-top: solid 3px #95c41f;
 }
 
-.heading-properties p i{
+.heading-properties p i {
     color: crimson;
     margin-right: 5px;
 }
 
-.heading-properties h5{
+.heading-properties h5 {
     color: #95c41f;
 }
 
-.heading-properties h3 span{
+.heading-properties h3 span {
     color: crimson;
 }
 
@@ -173,15 +173,16 @@ input[type=checkbox]:checked + label:before {
     color: #95c41f;
 }
 
-.bootstrap-select .dropdown-menu li a:hover {
-    background: #95c41f;
-}
+    .bootstrap-select .dropdown-menu li a:hover {
+        background: #95c41f;
+    }
 
 .bootstrap-select .dropdown-menu > .active > a,
 .bootstrap-select .dropdown-menu > .active > a:focus,
 .bootstrap-select .dropdown-menu > .active > a:hover {
     color: #95c41f;
 }
+
 .for-sale {
     background: #95c41f;
 }
@@ -203,7 +204,7 @@ input[type=checkbox]:checked + label:before {
     background: crimson;
 }
 
-.agent-box .title a:hover{
+.agent-box .title a:hover {
     color: #95c41f;
 }
 
@@ -224,10 +225,11 @@ input[type=checkbox]:checked + label:before {
     background: #95c41f;
 }
 
-.option-bar .heading-icon{
+.option-bar .heading-icon {
     background: crimson;
     border-right: 1px solid #fff;
 }
+
 .change-view-btn {
     color: #95c41f;
     border: solid 1px #95c41f;
@@ -247,10 +249,10 @@ input[type=checkbox]:checked + label:before {
     border: solid 1px #95c41f;
 }
 
-.active-view-btn:hover {
-    border: solid 1px #95c41f;
-    color: #95c41f;
-}
+    .active-view-btn:hover {
+        border: solid 1px #95c41f;
+        color: #95c41f;
+    }
 
 .listing-properties-box .detail header.title a {
     color: #95c41f;
@@ -274,18 +276,19 @@ input[type=checkbox]:checked + label:before {
     border-color: crimson;
 }
 
-.pagination > .active > a:hover {
-    background: crimson;
-    border-color: crimson;
-}
+    .pagination > .active > a:hover {
+        background: crimson;
+        border-color: crimson;
+    }
 
 .blog-box .detail .post-meta span a i {
     color: #95c41f;
 }
 
-.agent-box-list .agent-content h1 a:hover{
+.agent-box-list .agent-content h1 a:hover {
     color: #95c41f;
 }
+
 .form-content-box .footer span a {
     color: #95c41f;
 }
@@ -294,11 +297,11 @@ blockquote {
     border-left: 5px solid #95c41f;
 }
 
-.banner-search-box{
+.banner-search-box {
     border-top: solid 5px crimson;
 }
 
-.agent-box-big .agent-content h1 a:hover{
+.agent-box-big .agent-content h1 a:hover {
     color: #95c41f;
 }
 
@@ -307,15 +310,17 @@ blockquote {
     background: #95c41f;
 }
 
-.tab-style-2-line > .nav-tabs > li.active > a:hover {
-    border: solid 1px #95c41f !important;
-    background: #95c41f !important;;
-}
+    .tab-style-2-line > .nav-tabs > li.active > a:hover {
+        border: solid 1px #95c41f !important;
+        background: #95c41f !important;
+        ;
+    }
 
 
-.archives ul li a:hover{
+.archives ul li a:hover {
     color: #95c41f;
 }
+
 .range-slider .ui-slider .ui-slider-handle {
     background: #95c41f;
 }
@@ -366,7 +371,7 @@ blockquote {
 }
 
 .breadcrumbs li a:hover {
-    color: #95c41f;
+    color: crimson;
 }
 
 .top-header ul li a:hover {
@@ -377,15 +382,15 @@ blockquote {
     color: crimson;
 }
 
-.main-title-2 h1 a:hover{
+.main-title-2 h1 a:hover {
     color: #95c41f;
 }
 
-.agent-box-big .contact p i{
+.agent-box-big .contact p i {
     color: #95c41f;
 }
 
-.agent-box-list .contact p i{
+.agent-box-list .contact p i {
     color: #95c41f;
 }
 
@@ -393,20 +398,20 @@ blockquote {
     color: #fff;
 }
 
-.attachments a:hover{
+.attachments a:hover {
     color: #95c41f;
 }
 
-.additional-details-list li a:hover{
+.additional-details-list li a:hover {
     color: #95c41f;
 }
 
-.user-account-box  .content ul li .active {
+.user-account-box .content ul li .active {
     color: #95c41f;
     border-left: solid 5px #95c41f;
 }
 
-.user-account-box  .content ul li a:hover{
+.user-account-box .content ul li a:hover {
     color: #95c41f;
     border-left: solid 5px #95c41f;
 }
@@ -416,24 +421,24 @@ blockquote {
     color: #95c41f;
 }
 
-.user-account-box .header{
+.user-account-box .header {
     background: #95c41f;
 }
 
-table.manage-table .title-container .title h4 a{
+table.manage-table .title-container .title h4 a {
     color: #95c41f;
 }
 
-table.manage-table .title-container .title span i{
+table.manage-table .title-container .title span i {
     color: #95c41f;
     margin-right: 5px;
 }
 
-.panel-box span a{
+.panel-box span a {
     color: #95c41f;
 }
 
-table.manage-table td.action a:hover{
+table.manage-table td.action a:hover {
     color: #95c41f;
 }
 
@@ -459,16 +464,18 @@ table.manage-table td.action a:hover{
     background-color: #95c41f;
     cursor: pointer;
 }
-.map-marker:hover:before {
-    border-color: #95c41f transparent transparent transparent;
-}
+
+    .map-marker:hover:before {
+        border-color: #95c41f transparent transparent transparent;
+    }
 
 .map-marker.featured:hover {
     background-color: #95c41f;
 }
-.map-marker.featured:hover:before {
-    border-color: #95c41f transparent transparent transparent;
-}
+
+    .map-marker.featured:hover:before {
+        border-color: #95c41f transparent transparent transparent;
+    }
 
 .map-marker .icon {
     border: 3px solid #95c41f;
@@ -477,22 +484,25 @@ table.manage-table td.action a:hover{
 .marker-active .map-marker {
     background-color: #95c41f;
 }
-.marker-active .map-marker:before {
-    border-color: #95c41f transparent transparent transparent;
-}
 
-.map-properties .address i{
+    .marker-active .map-marker:before {
+        border-color: #95c41f transparent transparent transparent;
+    }
+
+.map-properties .address i {
     color: #95c41f;
 }
 
-.map-properties-btns .border-button-theme{
-    color: #95c41f; !important;
+.map-properties-btns .border-button-theme {
+    color: #95c41f;
+    !important;
 }
 
-.map-properties-btns .border-button-theme:hover{
-    color: #fff !important;
-}
-.map-properties .map-content h4 a{
+    .map-properties-btns .border-button-theme:hover {
+        color: #fff !important;
+    }
+
+.map-properties .map-content h4 a {
     color: #95c41f;
 }
 
@@ -501,18 +511,18 @@ table.manage-table td.action a:hover{
 }
 
 @media (max-width: 768px) {
-    .navbar-default .navbar-toggle{
+    .navbar-default .navbar-toggle {
         background-color: crimson;
     }
 
-    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-        background-color: crimson ;
-        opacity: 0.7;
-    }
+        .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+            background-color: crimson;
+            opacity: 0.7;
+        }
 
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
         background-color: crimson;
-        color: #fff! important;
+        color: #fff !important;
     }
 
     .main-header .navbar-default .nav > li > a:hover {
@@ -520,7 +530,8 @@ table.manage-table td.action a:hover{
     }
 
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
-        background-color: #95c41f; !important;
+        background-color: #95c41f;
+        !important;
     }
 
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {

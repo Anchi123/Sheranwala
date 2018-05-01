@@ -9,12 +9,17 @@ body {
 
 a {
     cursor: pointer;
-    color: #555;
+    color: crimson;
 }
 
-    a:hover {
-        text-decoration: none;
-    }
+.mb {
+    margin-bottom: 20px;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
 
 .delay-02s {
     animation-delay: 0.2s;
@@ -579,6 +584,23 @@ input[type=checkbox]:checked + label:before {
     vertical-align: middle;
 }
 
+.media {
+    margin-bottom: 15px;
+}
+
+.agency-info {
+    background-color: crimson;
+    color: white !important;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.sidebar-widget .btn-default {
+    color: #fff;
+    background-color: darksalmon;
+    border-color: #ccc;
+}
+
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
@@ -729,7 +751,6 @@ input[type=checkbox]:checked + label:before {
 .latest-update .block-heading {
     padding: 9.4px 0px;
     border: 2px solid crimson;
-   
 }
 
 .latest-update .heading-icon {
@@ -747,7 +768,7 @@ input[type=checkbox]:checked + label:before {
     }
 
     #typewriter {
-        line-height : 35px;
+        line-height: 35px;
     }
 }
 
@@ -910,7 +931,7 @@ input[type=checkbox]:checked + label:before {
     background: transparent !important;
 }
 
-.bootstrap-select .dropdown-menu > .active > a,
+28853 . .bootstrap-select .dropdown-menu > .active > a,
 .bootstrap-select .dropdown-menu > .active > a:focus,
 .bootstrap-select .dropdown-menu > .active > a:hover {
     text-decoration: none;
@@ -1708,13 +1729,13 @@ input[type=checkbox]:checked + label:before {
 }
 
 footer {
-    background: #111;
-    color: #7c7e83;
+    background-image: url(../img/footer-light_gray_bricks.jpg);
+    color: #FFF;
     padding-bottom: 30px;
 }
 
 .footer-top {
-    background: rgba(255, 255, 255, 0.03);
+    background: #1C1C1C;
     margin-bottom: 50px;
     padding: 30px;
 }
@@ -1809,7 +1830,7 @@ footer ul {
 
     .footer-info .links li a {
         text-decoration: none;
-        color: #7c7e83;
+        color: #FFF;
     }
 
         .footer-info .links li a:hover {
@@ -1821,8 +1842,8 @@ footer ul {
 }
 
 .footer-info .tags-box ul li a {
-    color: #7c7e83;
-    border: solid 1px #7c7e83;
+    color: #FFF;
+    border: solid 1px #FFF;
 }
 
 .property-address .s-icon {
@@ -2569,20 +2590,21 @@ footer ul {
     color: #fff;
 }
 
-.social-list li .linkedin:hover {
-    background: #1c82ca;
+.social-list li .youtube:hover {
+    background: #d11515;
     color: #fff;
 }
 
-.social-list li .google:hover {
-    background: #dc4e41;
+.social-list li .instagram:hover {
+    background: linear-gradient(#641db4, #fbe114);
     color: #fff;
 }
 
-.social-list li .rss:hover {
-    background: #e78733;
+.social-list li .whatsapp {
+    background: #36cc35;
     color: #fff;
 }
+
 
 .option-bar .col-sm-6 {
     width: auto;
@@ -2881,7 +2903,7 @@ a:hover {
 
 .sidebar-widget {
     background: #fff;
-    padding: 20px;
+    padding: 0px;
     margin-bottom: 30px;
 }
 
@@ -3926,23 +3948,41 @@ mark, .mark {
     margin-bottom: 30px;
 }
 
-    .nav-tabs > li > a {
-        line-height: 1.42857143;
-        border: none;
-    }
+bs-example-tabs .nav-tabs {
+    border-bottom: 1px solid crimson;
+    margin-bottom: 30px;
+}
 
-        .nav-tabs > li > a:hover {
-            background: transparent;
-            border-radius: 0;
-        }
 
-    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-        color: #555;
-        cursor: default;
-        border: none;
+.bs-example-tabs .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: white;
+    background-color: crimson;
+}
+
+.bs-example-tabs .nav-tabs > li > a:hover {
+    background: transparent;
+    border-radius: 0;
+    color: crimson;
+}
+
+
+.nav-tabs > li > a {
+    line-height: 1.42857143;
+    border: none;
+}
+
+    .nav-tabs > li > a:hover {
+        background: transparent;
         border-radius: 0;
-        border-bottom-color: transparent;
     }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #555;
+    cursor: default;
+    border: none;
+    border-radius: 0;
+    border-bottom-color: transparent;
+}
 
 #carousel-custom .carousel-indicators {
     margin: 10px 0 0;
@@ -5620,8 +5660,3 @@ table.manage-table {
     height: 222px;
 }
 }
-
-
-
-
-
